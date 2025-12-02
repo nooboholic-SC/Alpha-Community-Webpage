@@ -1,7 +1,14 @@
 body {
-	background-image: linear-gradient(to bottom, #DE1A58, #D78FEE);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    min-height: 100%;
+	
+    background-image: url("src/ALPHA.webp");
+	background-color: black;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	min-height: 90vh;
+	color: black;
+	font-family: Arial;
+	text-align: center;
+	
 }
