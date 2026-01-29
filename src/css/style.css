@@ -27,3 +27,20 @@ body {
 	color : white;
 	padding : 14px 20px;
 }
+
+.card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+}
+.btn {
+      background: #5865F2;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+   }
