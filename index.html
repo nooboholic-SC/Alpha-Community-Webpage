@@ -12,5 +12,24 @@
     <a href="https://discord.gg/TWz2W9rB5M">Discord</a>
     <a href="#staff">Staff</a>
   </div>
+  <div class="card">
+  <h2 id="name">Loading...</h2>
+  <p>🟢 Online: <span id="online">-</span></p>
+  <a id="invite" class="btn" target="_blank">Join Server</a>
+</div>
+  <script>
+const SERVER_ID = "1172812733100609547";
+
+fetch(`https://discord.com/api/guilds/${SERVER_ID}/widget.json`)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("name").textContent = data.name;
+    document.getElementById("online").textContent = data.presence_count;
+    document.getElementById("invite").href = data.instant_invite;
+  })
+  .catch(() => {
+    document.getElementById("name").textContent = "Widget disabled";
+  });
+</script>
 </body>
 </html>
