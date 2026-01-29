@@ -87,9 +87,7 @@ body::before {
     filter: drop-shadow(0 2px 4px rgba(255, 107, 107, 0.3));
 }
 
-.logo-link:hover .alpha-logo {
-    filter: drop-shadow(0 4px 8px rgba(255, 107, 107, 0.5));
-}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
