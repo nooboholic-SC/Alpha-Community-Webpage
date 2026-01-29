@@ -4,15 +4,21 @@
   "online_count": 150,
   "estimated_total": 750,
   "voice_count": 3,
-  "last_updated": "2026-01-29T12:18:49.058514Z",
+  "last_updated": "2026-01-29T12:25:42.738009Z",
   "source": "fallback_data",
   "note": "Enable server widget in Discord settings for live data",
   "update_history": [
     {
       "timestamp": "2026-01-29T12:18:49.058514Z",
       "online": 150
+    },
+    {
+      "timestamp": "2026-01-29T12:25:42.738009Z",
+      "online": 150
     }
   ],
   "uptime_percentage": "99.8%",
-  "peak_hour": "19:00 UTC"
+  "peak_hour": "19:00 UTC",
+  "fetch_error": true,
+  "trend": "stable"
 }
