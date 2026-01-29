@@ -14,7 +14,8 @@
   </div>
   <div class="card">
   <h2 id="name">Loading...</h2>
-  <p>🟢 Online: <span id="online">-</span></p>
+  <p> Member Count: <span id="online">-</span></p>  
+  <p>🟢 Online: <span id="total">-</span></p>
   <a id="invite" class="btn" target="_blank">Join Server</a>
 </div>
   <script>
@@ -25,6 +26,7 @@ fetch(`https://discord.com/api/guilds/${SERVER_ID}/widget.json`)
   .then(data => {
     document.getElementById("name").textContent = data.name;
     document.getElementById("online").textContent = data.presence_count;
+    document.getElementById("total").textContent = data.members.length;
     document.getElementById("invite").href = data.instant_invite;
   })
   .catch(() => {
