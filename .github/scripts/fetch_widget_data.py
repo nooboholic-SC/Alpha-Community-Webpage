@@ -81,7 +81,7 @@ def calculate_trend(current, previous):
         return 'stable'
 
 def main():
-    server_id = os.getenv('SERVER_ID')
+    server_id = 1172812733100609547
     
     if not server_id:
         print("SERVER_ID not set. Using demo data.")
