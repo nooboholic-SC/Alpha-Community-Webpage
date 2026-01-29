@@ -1,38 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/css/style.css">
-  <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHA COMMUNITY | Bombsquad Gaming</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="navbar">
-    <a href="#aboutus">About Us</a>
-    <a href="https://discord.gg/TWz2W9rB5M">Discord</a>
-    <a href="#staff">Staff</a>
-  </div>
-  <div class="card">
-  <h2 id="name">Loading...</h2>
-  <p> Member Count: <span id="online">-</span></p>  
-  <p>🟢 Online: <span id="total">-</span></p>
-  <a id="invite" class="btn" target="_blank">Join Server</a>
-</div>
-  <iframe src="https://discord.com/widget?id=1172812733100609547&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-  <script>
-const SERVER_ID = "1172812733100609547";
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bomb"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-alpha">ALPHA</span>
+                    <span class="logo-community">COMMUNITY</span>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+                <a href="#servers" class="nav-link">
+                    <i class="fas fa-server"></i> Servers
+                </a>
+                <a href="#tournaments" class="nav-link">
+                    <i class="fas fa-trophy"></i> Tournaments
+                </a>
+                <a href="#staff" class="nav-link">
+                    <i class="fas fa-users-cog"></i> Staff
+                </a>
+                <a href="https://discord.gg/TWz2W9rB5M" class="nav-cta" target="_blank">
+                    <i class="fab fa-discord"></i> Join Discord
+                </a>
+            </div>
+            
+            <div class="nav-mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-fetch(`https://discord.com/api/guilds/${SERVER_ID}/widget.json`)
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("name").textContent = data.name;
-    document.getElementById("online").textContent = data.presence_count;
-    document.getElementById("total").textContent = data.members.length;
-    document.getElementById("invite").href = data.instant_invite;
-  })
-  .catch(() => {
-    document.getElementById("name").textContent = "Widget disabled";
-  });
-</script>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-gamepad"></i> Bombsquad Gaming Community
+                </div>
+                
+                <h1 class="hero-title">
+                    WELCOME TO <span class="highlight">ALPHA COMMUNITY</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    The ultimate Bombsquad gaming community hosting epic tournaments 
+                    and maintaining multiple game servers for endless explosive fun!
+                </p>
+                
+                <!-- Discord Stats Card -->
+                <div class="discord-card">
+                    <div class="discord-header">
+                        <div class="server-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <div class="server-info">
+                            <h3 id="serverName">ALPHA COMMUNITY</h3>
+                            <div class="server-id">ID: 1172812733100609547</div>
+                        </div>
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            LIVE
+                        </div>
+                    </div>
+                    
+                    <div class="discord-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="onlineCount">0</div>
+                            <div class="stat-label">Online Now</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="totalMembers">0</div>
+                            <div class="stat-label">Total Members</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="voiceChannels">0</div>
+                            <div class="stat-label">Active Channels</div>
+                        </div>
+                    </div>
+                    
+                    <div class="discord-footer">
+                        <div class="last-update">
+                            <i class="fas fa-sync-alt"></i>
+                            Updated <span id="lastUpdated">just now</span>
+                        </div>
+                        <a href="https://discord.gg/TWz2W9rB5M" class="join-btn" target="_blank">
+                            <i class="fab fa-discord"></i> Join Server
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon"><i class="fas fa-crosshairs"></i></span>
+                    ABOUT OUR COMMUNITY
+                </h2>
+                <p class="section-subtitle">Explosive gaming since 2023</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Tournament Hosting</h3>
+                    <p>We regularly host competitive Bombsquad tournaments with prizes, rankings, and professional organization.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Multiple Servers</h3>
+                    <p>Maintaining various Bombsquad game servers with different modes, maps, and custom gameplay experiences.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Active Community</h3>
+                    <p>Join thousands of active Bombsquad players who share strategies, tips, and organize game sessions daily.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe Environment</h3>
+                    <p>Dedicated moderation team ensuring fair play, no cheating, and a positive gaming environment for all.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servers Section -->
+    <section class="section servers-section" id="servers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon"><i class="fas fa-gamepad"></i></span>
+                    OUR BOMBSQUAD SERVERS
+                </h2>
+                <p class="section-subtitle">Multiple servers for endless fun</p>
+            </div>
+            
+            <div class="servers-grid">
+                <div class="server-card">
+                    <div class="server-status online"></div>
+                    <div class="server-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Alpha Competitive</h3>
+                    <p>Main competitive server for tournaments and ranked matches.</p>
+                    <div class="server-info">
+                        <span><i class="fas fa-user"></i> 24/50 Players</span>
+                        <span><i class="fas fa-map"></i> Tournament Maps</span>
+                    </div>
+                </div>
+                
+                <div class="server-card">
+                    <div class="server-status online"></div>
+                    <div class="server-icon">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <h3>Casual Fun</h3>
+                    <p>Relaxed server for casual gameplay and new players.</p>
+                    <div class="server-info">
+                        <span><i class="fas fa-user"></i> 18/50 Players</span>
+                        <span><i class="fas fa-map"></i> All Maps</span>
+                    </div>
+                </div>
+                
+                <div class="server-card">
+                    <div class="server-status idle"></div>
+                    <div class="server-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3>Custom Mods</h3>
+                    <p>Experimental server with custom mods and game modes.</p>
+                    <div class="server-info">
+                        <span><i class="fas fa-user"></i> 12/50 Players</span>
+                        <span><i class="fas fa-map"></i> Modded Maps</span>
+                    </div>
+                </div>
+                
+                <div class="server-card">
+                    <div class="server-status online"></div>
+                    <div class="server-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training Grounds</h3>
+                    <p>Practice server for improving skills and strategies.</p>
+                    <div class="server-info">
+                        <span><i class="fas fa-user"></i> 8/50 Players</span>
+                        <span><i class="fas fa-map"></i> Training Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section class="section staff-section" id="staff">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon"><i class="fas fa-user-shield"></i></span>
+                    MEET OUR STAFF TEAM
+                </h2>
+                <p class="section-subtitle">Dedicated team keeping the community awesome</p>
+            </div>
+            
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-avatar admin">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>AlphaLeader</h3>
+                    <p class="staff-role">Server Owner</p>
+                    <p class="staff-desc">Community founder and head tournament organizer.</p>
+                    <div class="staff-social">
+                        <span><i class="fas fa-star"></i> Level 100</span>
+                        <span><i class="fas fa-clock"></i> 2+ years</span>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-avatar admin">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ModMaster</h3>
+                    <p class="staff-role">Head Admin</p>
+                    <p class="staff-desc">Manages server operations and admin team.</p>
+                    <div class="staff-social">
+                        <span><i class="fas fa-star"></i> Level 85</span>
+                        <span><i class="fas fa-clock"></i> 1.5 years</span>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-avatar mod">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>GameGuard</h3>
+                    <p class="staff-role">Senior Moderator</p>
+                    <p class="staff-desc">Ensures fair play and resolves disputes.</p>
+                    <div class="staff-social">
+                        <span><i class="fas fa-star"></i> Level 72</span>
+                        <span><i class="fas fa-clock"></i> 1 year</span>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-avatar mod">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>TourneyPro</h3>
+                    <p class="staff-role">Tournament Manager</p>
+                    <p class="staff-desc">Organizes and runs competitive events.</p>
+                    <div class="staff-social">
+                        <span><i class="fas fa-star"></i> Level 68</span>
+                        <span><i class="fas fa-clock"></i> 10 months</span>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-avatar helper">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>NewbieGuide</h3>
+                    <p class="staff-role">Community Helper</p>
+                    <p class="staff-desc">Welcomes new members and helps beginners.</p>
+                    <div class="staff-social">
+                        <span><i class="fas fa-star"></i> Level 55</span>
+                        <span><i class="fas fa-clock"></i> 6 months</span>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-avatar dev">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>TechWizard</h3>
+                    <p class="staff-role">Bot Developer</p>
+                    <p class="staff-desc">Creates and maintains custom Discord bots.</p>
+                    <div class="staff-social">
+                        <span><i class="fas fa-star"></i> Level 60</span>
+                        <span><i class="fas fa-clock"></i> 8 months</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Widget -->
+    <section class="section widget-section">
+        <div class="container">
+            <div class="widget-wrapper">
+                <div class="widget-info">
+                    <h2>JOIN OUR DISCORD</h2>
+                    <p>Get instant access to all our Bombsquad servers, tournament announcements, and community discussions.</p>
+                    <div class="widget-features">
+                        <div class="feature">
+                            <i class="fas fa-comment-dots"></i>
+                            <span>Live Chat & Voice</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bell"></i>
+                            <span>Tournament Alerts</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-download"></i>
+                            <span>Game Resources</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="widget-embed">
+                    <iframe src="https://discord.com/widget?id=1172812733100609547&theme=dark" 
+                            width="350" height="500" 
+                            allowtransparency="true" 
+                            frameborder="0" 
+                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-bomb"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-alpha">ALPHA</span>
+                        <span class="logo-community">COMMUNITY</span>
+                    </div>
+                    <p class="footer-tagline">Bombsquad Gaming Excellence Since 2023</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Community</h4>
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#servers">Game Servers</a>
+                        <a href="#tournaments">Tournaments</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#staff">Staff Team</a>
+                        <a href="https://discord.gg/TWz2W9rB5M">Discord</a>
+                        <a href="#">Rules</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://discord.gg/TWz2W9rB5M" class="social-icon discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-icon youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon reddit">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ALPHA COMMUNITY. All rights reserved. Bombsquad is a trademark of Eric Froemling.</p>
+                <p>This is a community fan site, not officially affiliated with Bombsquad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configuration
+        const SERVER_ID = "1172812733100609547";
+        const STATS_FILE = 'discord-stats.json'; // For GitHub Actions updates
+        
+        // DOM Elements
+        const serverNameEl = document.getElementById('serverName');
+        const onlineCountEl = document.getElementById('onlineCount');
+        const totalMembersEl = document.getElementById('totalMembers');
+        const voiceChannelsEl = document.getElementById('voiceChannels');
+        const lastUpdatedEl = document.getElementById('lastUpdated');
+        
+        // Format number
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        
+        // Time ago function
+        function timeAgo(timestamp) {
+            if (!timestamp) return 'unknown';
+            const date = new Date(timestamp);
+            const now = new Date();
+            const seconds = Math.floor((now - date) / 1000);
+            
+            if (seconds < 60) return 'just now';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+            return `${Math.floor(seconds / 86400)}d ago`;
+        }
+        
+        // Update Discord stats
+        function updateDiscordStats(data) {
+            if (data) {
+                serverNameEl.textContent = data.name || 'ALPHA COMMUNITY';
+                onlineCountEl.textContent = formatNumber(data.presence_count || 0);
+                totalMembersEl.textContent = formatNumber(data.members ? data.members.length : 0);
+                
+                // Count voice channels
+                if (data.channels) {
+                    const voiceChannels = data.channels.filter(ch => 
+                        ch.type === 2 // Voice channel type
+                    ).length;
+                    voiceChannelsEl.textContent = voiceChannels;
+                }
+                
+                lastUpdatedEl.textContent = 'just now';
+            }
+        }
+        
+        // Try to load from GitHub Actions JSON first
+        async function loadStats() {
+            try {
+                // Try to load from GitHub Actions generated JSON
+                const response = await fetch(STATS_FILE + '?t=' + Date.now());
+                if (response.ok) {
+                    const data = await response.json();
+                    updateDiscordStats({
+                        name: data.server_name,
+                        presence_count: data.online_count,
+                        members: Array(data.online_count || 0).fill({}),
+                        channels: Array(data.voice_count || 0).fill({type: 2})
+                    });
+                    if (data.last_updated) {
+                        lastUpdatedEl.textContent = timeAgo(data.last_updated);
+                    }
+                    return;
+                }
+            } catch (error) {
+                console.log('Using direct Discord API');
+            }
+            
+            // Fallback to direct Discord API
+            fetch(`https://discord.com/api/guilds/${SERVER_ID}/widget.json`)
+                .then(res => res.json())
+                .then(data => {
+                    updateDiscordStats(data);
+                    if (data.instant_invite) {
+                        document.querySelector('.join-btn').href = data.instant_invite;
+                    }
+                })
+                .catch(() => {
+                    serverNameEl.textContent = "ALPHA COMMUNITY";
+                    onlineCountEl.textContent = "250+";
+                    totalMembersEl.textContent = "1,000+";
+                    voiceChannelsEl.textContent = "8";
+                });
+        }
+        
+        // Mobile menu toggle
+        document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Auto-refresh stats every 60 seconds
+        function autoRefresh() {
+            setInterval(loadStats, 60000);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStats();
+            autoRefresh();
+            
+            // Update time every minute
+            setInterval(() => {
+                const currentText = lastUpdatedEl.textContent;
+                if (currentText.includes('m ago') || currentText.includes('h ago')) {
+                    lastUpdatedEl.textContent = timeAgo(new Date(Date.now() - 60000));
+                }
+            }, 60000);
+        });
+    </script>
 </body>
 </html>
