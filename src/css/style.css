@@ -1,0 +1,29 @@
+body {
+	
+    background-image: url("../images/ALPHA.webp");
+	background-color: black;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	min-height: 90vh;
+	color: white;
+	font-family: Arial;
+	text-align: center;
+	
+}
+
+#navbar {
+	display : flex;
+	justify-content : right;
+	overflow: hidden;
+	color : white;
+	font-family : Arial, sans-serif;
+	gap : 10%;	
+}
+
+#navbar a {
+	text-decoration : none;
+	color : white;
+	padding : 14px 20px;
+}
