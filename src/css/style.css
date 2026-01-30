@@ -840,7 +840,8 @@ h1, h2, h3, h4 {
 }
 
 .gaming-icon.valorant {
-    background: linear-gradient(135deg, #FF4655, #9B59B6);
+    background-image: url("../images/Valorant.webp");
+    background-size: cover;
 }
 
 .gaming-icon.discord {
