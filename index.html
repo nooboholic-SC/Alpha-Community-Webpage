@@ -386,6 +386,75 @@
         </div>
     </section>
 
+    <!-- Server Details Popup -->
+<div class="server-popup-overlay" id="serverPopupOverlay">
+    <div class="server-popup-container">
+        <div class="server-popup-header">
+            <h3 id="serverPopupTitle">Server Details</h3>
+            <button class="server-popup-close" onclick="closeServerPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="server-popup-content">
+            <div class="server-popup-status">
+                <span class="status-indicator online" id="serverStatus"></span>
+                <span id="serverStatusText">Online</span>
+                <span class="last-updated" id="serverLastUpdated">Last updated: Just now</span>
+            </div>
+            
+            <div class="server-popup-grid">
+                <div class="server-info-section">
+                    <h4><i class="fas fa-info-circle"></i> Server Information</h4>
+                    <div class="info-card">
+                        <div class="info-row">
+                            <span class="info-label">Current Round:</span>
+                            <span class="info-value" id="currentRound">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Next Round:</span>
+                            <span class="info-value" id="nextRound">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Total Players:</span>
+                            <span class="info-value" id="totalPlayers">0</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Live Chat:</span>
+                            <span class="info-value" id="liveChat">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">In Game:</span>
+                            <span class="info-value" id="inGame">0</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">In Lobby:</span>
+                            <span class="info-value" id="inLobby">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="players-section">
+                    <h4><i class="fas fa-users"></i> Online Players (<span id="playersCount">0</span>)</h4>
+                    <div class="players-list" id="playersList">
+                        <div class="loading-players">
+                            <i class="fas fa-spinner fa-spin"></i> Loading player data...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="server-actions">
+                <button class="refresh-btn" onclick="refreshServerData()">
+                    <i class="fas fa-sync-alt"></i> Refresh Data
+                </button>
+                <button class="copy-ip-btn" id="copyIpBtn">
+                    <i class="fas fa-copy"></i> Copy IP:PORT
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Tournament Section -->
 <section class="section tournament-section" id="tournaments">
@@ -1055,6 +1124,329 @@
                 document.body.insertAdjacentHTML('beforeend', popupHTML);
             }
         });
+
+
+// Server Data Configuration
+const serverConfigs = {
+    'Alpha Epic Teams': {
+        jsonPath: 'src/servers/alpha-epic-teams.json',
+        ip: '34.47.155.240',
+        port: '42343'
+    },
+    'Alpha Epic Soccer': {
+        jsonPath: 'src/servers/alpha-epic-soccer.json',
+        ip: '152.67.11.35',
+        port: '43210'
+    },
+    'Alpha Epic Duels': {
+        jsonPath: 'src/servers/alpha-epic-duels.json',
+        ip: '13.127.82.216',
+        port: '43210'
+    },
+    'Alpha vs Defender Pro Soccer': {
+        jsonPath: 'src/servers/alpha-defender-pro-soccer.json',
+        ip: '13.204.68.220',
+        port: '43243'
+    },
+    'Alpha vs PDF FFA': {
+        jsonPath: 'src/servers/alpha-pdf-ffa.json',
+        ip: '13.232.55.163',
+        port: '43210'
+    },
+    'Alpha vs Nooboholic Fantasy Soccer': {
+        jsonPath: 'src/servers/alpha-nooboholic-fantasy.json',
+        ip: '129.151.46.134',
+        port: '43243'
+    }
+};
+
+// Current server data
+let currentServerData = null;
+let currentServerName = '';
+
+// Server Popup Functions
+function showServerPopup(serverName) {
+    currentServerName = serverName;
+    const serverConfig = serverConfigs[serverName];
+    
+    if (!serverConfig) {
+        alert('Server configuration not found!');
+        return;
+    }
+    
+    // Update popup title
+    document.getElementById('serverPopupTitle').textContent = serverName;
+    
+    // Show popup
+    document.getElementById('serverPopupOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Load server data
+    loadServerData(serverConfig.jsonPath, serverConfig.ip, serverConfig.port);
+    
+    // Set up copy button
+    const copyBtn = document.getElementById('copyIpBtn');
+    copyBtn.onclick = function() {
+        copyToClipboard(`${serverConfig.ip}:${serverConfig.port}`);
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        
+        setTimeout(() => {
+            copyBtn.classList.remove('copied');
+            copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy IP:PORT';
+        }, 2000);
+    };
+}
+
+function closeServerPopup() {
+    document.getElementById('serverPopupOverlay').classList.remove('active');
+    document.body.style.overflow = 'auto';
+    currentServerData = null;
+}
+
+function refreshServerData() {
+    if (currentServerName && serverConfigs[currentServerName]) {
+        const serverConfig = serverConfigs[currentServerName];
+        loadServerData(serverConfig.jsonPath, serverConfig.ip, serverConfig.port);
+        
+        // Show refreshing indicator
+        const refreshBtn = document.querySelector('.refresh-btn');
+        refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+        refreshBtn.disabled = true;
+    }
+}
+
+async function loadServerData(jsonPath, ip, port) {
+    try {
+        // Add timestamp to prevent caching
+        const response = await fetch(`${jsonPath}?t=${Date.now()}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        currentServerData = data;
+        
+        // Update UI with server data
+        updateServerUI(data);
+        
+        // Reset refresh button
+        const refreshBtn = document.querySelector('.refresh-btn');
+        refreshBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh Data';
+        refreshBtn.disabled = false;
+        
+    } catch (error) {
+        console.error('Error loading server data:', error);
+        showServerError();
+    }
+}
+
+function updateServerUI(data) {
+    // Update status
+    const status = data.status || 'offline';
+    const statusIndicator = document.getElementById('serverStatus');
+    const statusText = document.getElementById('serverStatusText');
+    
+    statusIndicator.className = `status-indicator ${status}`;
+    statusText.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+    
+    // Update last updated time
+    const lastUpdated = document.getElementById('serverLastUpdated');
+    if (data.last_updated) {
+        const timeAgo = getTimeAgo(data.last_updated);
+        lastUpdated.textContent = `Last updated: ${timeAgo}`;
+    }
+    
+    // Update server info
+    if (data.server_info) {
+        document.getElementById('currentRound').textContent = data.server_info.current_round || 'Unknown';
+        document.getElementById('nextRound').textContent = data.server_info.next_round || 'Unknown';
+        document.getElementById('totalPlayers').textContent = data.server_info.total_players || 0;
+        document.getElementById('liveChat').textContent = data.server_info.live_chat_enabled ? 'Enabled' : 'Disabled';
+    }
+    
+    // Update statistics
+    if (data.statistics) {
+        document.getElementById('inGame').textContent = data.statistics.in_game || 0;
+        document.getElementById('inLobby').textContent = data.statistics.in_lobby || 0;
+    }
+    
+    // Update players
+    updatePlayersList(data.players || []);
+}
+
+function updatePlayersList(players) {
+    const playersList = document.getElementById('playersList');
+    const playersCount = document.getElementById('playersCount');
+    
+    playersCount.textContent = players.length;
+    
+    if (players.length === 0) {
+        playersList.innerHTML = `
+            <div class="no-players">
+                <i class="fas fa-user-slash"></i>
+                <p>No players online</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Create player cards
+    playersList.innerHTML = players.map(player => `
+        <div class="player-card">
+            <div class="player-header">
+                <div class="player-name">${escapeHtml(player.display_name || player.name || 'Unknown')}</div>
+                <div class="player-id">${player.id ? player.id.substring(0, 8) + '...' : 'N/A'}</div>
+            </div>
+            <div class="player-details">
+                <div class="player-detail">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">${escapeHtml(player.name || 'Unknown')}</span>
+                </div>
+                <div class="player-detail">
+                    <span class="detail-label">v2 Device ID:</span>
+                    <span class="detail-value device-id">${escapeHtml(player.device_id || 'Unknown')}</span>
+                </div>
+                <div class="player-detail">
+                    <span class="detail-label">Client ID:</span>
+                    <span class="detail-value">${player.client_id || 'N/A'}</span>
+                </div>
+                <div class="player-detail">
+                    <span class="detail-label">Play Time:</span>
+                    <span class="detail-value">${player.play_time_minutes || 0} min</span>
+                </div>
+                <div class="player-detail">
+                    <span class="detail-label">In Lobby:</span>
+                    <span class="detail-value">${player.is_in_lobby ? 'Yes' : 'No'}</span>
+                </div>
+                <div class="player-detail">
+                    <span class="detail-label">Joined:</span>
+                    <span class="detail-value">${player.join_time ? getTimeAgo(new Date(player.join_time * 1000).toISOString()) : 'Unknown'}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function showServerError() {
+    const statusIndicator = document.getElementById('serverStatus');
+    const statusText = document.getElementById('serverStatusText');
+    const lastUpdated = document.getElementById('serverLastUpdated');
+    
+    statusIndicator.className = 'status-indicator offline';
+    statusText.textContent = 'Error';
+    lastUpdated.textContent = 'Failed to load data';
+    
+    document.getElementById('playersList').innerHTML = `
+        <div class="no-players">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Failed to load player data</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">Please try refreshing</p>
+        </div>
+    `;
+}
+
+// Utility Functions
+function getTimeAgo(timestamp) {
+    const now = new Date();
+    const date = new Date(timestamp);
+    const seconds = Math.floor((now - date) / 1000);
+    
+    if (seconds < 60) return 'just now';
+    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+    return `${Math.floor(seconds / 86400)}d ago`;
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        console.log('Copied to clipboard:', text);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    });
+}
+
+// Initialize server cards
+function initializeServerCards() {
+    const serverCards = document.querySelectorAll('.server-card');
+    
+    serverCards.forEach(card => {
+        const serverName = card.querySelector('h3').textContent;
+        
+        // Make card clickable
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            showServerPopup(serverName);
+        });
+        
+        // Add click effect
+        card.addEventListener('mousedown', () => {
+            card.style.transform = 'scale(0.98)';
+        });
+        
+        card.addEventListener('mouseup', () => {
+            card.style.transform = '';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+}
+
+// Close server popup when clicking outside or pressing Escape
+document.getElementById('serverPopupOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeServerPopup();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('serverPopupOverlay').classList.contains('active')) {
+        closeServerPopup();
+    }
+});
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Add server popup HTML if not already added
+    if (!document.getElementById('serverPopupOverlay')) {
+        const serverPopupHTML = `
+            <div class="server-popup-overlay" id="serverPopupOverlay">
+                <div class="server-popup-container">
+                    <div class="server-popup-header">
+                        <h3 id="serverPopupTitle">Server Details</h3>
+                        <button class="server-popup-close" onclick="closeServerPopup()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="server-popup-content">
+                        <!-- Content will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', serverPopupHTML);
+    }
+    
+    // Initialize server cards
+    initializeServerCards();
+});
+
     </script>
 </body>
 </html>
