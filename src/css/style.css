@@ -830,7 +830,8 @@ h1, h2, h3, h4 {
 }
 
 .gaming-icon.bombsquad {
-    background: linear-gradient(135deg, #FF6B6B, #FF9F43);
+    background-image: url("../images/bombsquad.webp");
+    background-size: cover;
 }
 
 .gaming-icon.gtav {
