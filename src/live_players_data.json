@@ -1,44 +1,19 @@
 {
   "status": "online",
-  "last_updated": "2026-01-30T17:39:56.427168",
-  "timestamp": 1769794796.4272037,
+  "last_updated": "2026-01-30T17:40:35.137553",
+  "timestamp": 1769794835.1375887,
   "server_info": {
-    "current_round": "Soccer @ Football Stadium",
-    "next_round": "Soccer @ Football Stadium",
-    "total_players": 2,
+    "current_round": "Unknown",
+    "next_round": "Unknown",
+    "total_players": 0,
     "live_chat_enabled": true
   },
-  "players": [
-    {
-      "id": "pb-IF4HVBcoFA==",
-      "name": "hahahahahahahaha",
-      "display_name": "hahahahahahahaha",
-      "client_id": 113,
-      "device_id": "NOOBOHOLIC",
-      "device_type": "unknown",
-      "is_in_lobby": false,
-      "join_time": 1769793881.691542,
-      "play_time_minutes": 15
-    },
-    {
-      "id": "pb-IF4VXhYcPA==",
-      "name": "BCSv2",
-      "display_name": "BCSv2",
-      "client_id": -1,
-      "device_id": "BCS-1.7.32 ",
-      "device_type": "unknown",
-      "is_in_lobby": false,
-      "join_time": 1769793881.691537,
-      "play_time_minutes": 15
-    }
-  ],
+  "players": [],
   "recent_chat": [],
   "statistics": {
-    "total_online": 2,
-    "in_game": 2,
+    "total_online": 0,
+    "in_game": 0,
     "in_lobby": 0,
-    "by_device": {
-      "unknown": 2
-    }
+    "by_device": {}
   }
 }
