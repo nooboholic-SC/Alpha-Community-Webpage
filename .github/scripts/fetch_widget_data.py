@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 import sys
+import os
 
 def fetch_discord_widget(server_id):
     """Fetch Discord server widget data (public API)"""
