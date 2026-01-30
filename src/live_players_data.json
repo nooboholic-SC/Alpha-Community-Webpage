@@ -1,7 +1,7 @@
 {
   "status": "online",
-  "last_updated": "2026-01-30T17:39:22.256772",
-  "timestamp": 1769794762.2568,
+  "last_updated": "2026-01-30T17:39:56.427168",
+  "timestamp": 1769794796.4272037,
   "server_info": {
     "current_round": "Soccer @ Football Stadium",
     "next_round": "Soccer @ Football Stadium",
@@ -18,7 +18,7 @@
       "device_type": "unknown",
       "is_in_lobby": false,
       "join_time": 1769793881.691542,
-      "play_time_minutes": 14
+      "play_time_minutes": 15
     },
     {
       "id": "pb-IF4VXhYcPA==",
@@ -29,7 +29,7 @@
       "device_type": "unknown",
       "is_in_lobby": false,
       "join_time": 1769793881.691537,
-      "play_time_minutes": 14
+      "play_time_minutes": 15
     }
   ],
   "recent_chat": [],
