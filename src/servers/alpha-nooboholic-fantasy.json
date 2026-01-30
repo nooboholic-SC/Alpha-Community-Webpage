@@ -1,18 +1,39 @@
 {
   "status": "online",
-  "last_updated": "2026-01-30T18:11:11.655593",
-  "timestamp": 1769796671.6556063,
+  "last_updated": "2026-01-30T18:11:45.635556",
+  "timestamp": 1769796705.6355708,
   "server_info": {
-    "current_round": "Unknown",
-    "next_round": "Unknown",
-    "total_players": 0,
+    "current_round": "Soccer @ Football Stadium",
+    "next_round": "Soccer @ Football Stadium",
+    "total_players": 2,
     "live_chat_enabled": true
   },
-  "players": [],
+  "players": [
+    {
+      "id": "pb-IF4HVBcoFA==",
+      "name": "hahahahahahahaha",
+      "display_name": "hahahahahahahaha",
+      "client_id": 113,
+      "device_id": "NOOBOHOLIC",
+      "is_in_lobby": false,
+      "join_time": 1769796705.6355445,
+      "play_time_minutes": 0
+    },
+    {
+      "id": "pb-IF4VXhYcPA==",
+      "name": "BCSv2",
+      "display_name": "BCSv2",
+      "client_id": -1,
+      "device_id": "BCS-1.7.32 ",
+      "is_in_lobby": false,
+      "join_time": 1769796705.6355467,
+      "play_time_minutes": 0
+    }
+  ],
   "recent_chat": [],
   "statistics": {
-    "total_online": 0,
-    "in_game": 0,
+    "total_online": 2,
+    "in_game": 2,
     "in_lobby": 0
   }
 }
