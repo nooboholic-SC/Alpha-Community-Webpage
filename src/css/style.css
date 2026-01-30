@@ -636,9 +636,9 @@ h1, h2, h3, h4 {
 }
 
 .social-icon.discord { background: var(--primary); }
-.social-icon.youtube { background: #FF0000; }
-.social-icon.twitter { background: #1DA1F2; }
-.social-icon.reddit { background: #FF4500; }
+.social-icon.youtube { background: red; }
+.social-icon.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+
 
 .footer-bottom {
     text-align: center;
