@@ -739,3 +739,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize server cards
     initializeServerCards();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeServerCards();
+});
