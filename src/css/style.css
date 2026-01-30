@@ -636,9 +636,9 @@ h1, h2, h3, h4 {
 }
 
 .social-icon.discord { background: var(--primary); }
-.social-icon.youtube { background: #FF0000; }
-.social-icon.twitter { background: #1DA1F2; }
-.social-icon.reddit { background: #FF4500; }
+.social-icon.youtube { background: red; }
+.social-icon.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+
 
 .footer-bottom {
     text-align: center;
@@ -830,19 +830,23 @@ h1, h2, h3, h4 {
 }
 
 .gaming-icon.bombsquad {
-    background: linear-gradient(135deg, #FF6B6B, #FF9F43);
+    background-image: url("../images/bombsquad.webp");
+    background-size: cover;
 }
 
 .gaming-icon.gtav {
-    background: linear-gradient(135deg, #2ECC71, #3498DB);
+    background-image: url("../images/GTAV.webp");
+    background-size: cover;
 }
 
 .gaming-icon.valorant {
-    background: linear-gradient(135deg, #FF4655, #9B59B6);
+    background-image: url("../images/Valorant.webp");
+    background-size: cover;
 }
 
 .gaming-icon.discord {
-    background: linear-gradient(135deg, #5865F2, #9B59B6);
+    background-image: url("../images/discord.webp");
+    background-size: cover;
 }
 
 .gaming-card h3 {
