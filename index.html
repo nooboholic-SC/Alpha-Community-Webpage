@@ -1258,21 +1258,27 @@ function updateServerUI(data) {
         lastUpdated.textContent = `Last updated: ${timeAgo}`;
     }
     
-    // Update server info
+    // Update server info - filter out host from total players
     if (data.server_info) {
+        const realPlayers = data.players ? data.players.filter(p => p.client_id !== -1).length : 0;
+        
         document.getElementById('currentRound').textContent = data.server_info.current_round || 'Unknown';
         document.getElementById('nextRound').textContent = data.server_info.next_round || 'Unknown';
-        document.getElementById('totalPlayers').textContent = data.server_info.total_players || 0;
+        document.getElementById('totalPlayers').textContent = realPlayers; // Show real players count
         document.getElementById('liveChat').textContent = data.server_info.live_chat_enabled ? 'Enabled' : 'Disabled';
     }
     
-    // Update statistics
+    // Update statistics - filter out host
     if (data.statistics) {
-        document.getElementById('inGame').textContent = data.statistics.in_game || 0;
-        document.getElementById('inLobby').textContent = data.statistics.in_lobby || 0;
+        const realPlayers = data.players ? data.players.filter(p => p.client_id !== -1) : [];
+        const inGame = realPlayers.filter(p => !p.is_in_lobby).length;
+        const inLobby = realPlayers.filter(p => p.is_in_lobby).length;
+        
+        document.getElementById('inGame').textContent = inGame;
+        document.getElementById('inLobby').textContent = inLobby;
     }
     
-    // Update players
+    // Update players (will filter out host)
     updatePlayersList(data.players || []);
 }
 
@@ -1280,9 +1286,13 @@ function updatePlayersList(players) {
     const playersList = document.getElementById('playersList');
     const playersCount = document.getElementById('playersCount');
     
-    playersCount.textContent = players.length;
+    // Filter out players with client_id = -1 (host/server bot)
+    const realPlayers = players.filter(player => player.client_id !== -1);
     
-    if (players.length === 0) {
+    // Update count with real players only
+    playersCount.textContent = realPlayers.length;
+    
+    if (realPlayers.length === 0) {
         playersList.innerHTML = `
             <div class="no-players">
                 <i class="fas fa-user-slash"></i>
@@ -1292,8 +1302,8 @@ function updatePlayersList(players) {
         return;
     }
     
-    // Create player cards
-    playersList.innerHTML = players.map(player => `
+    // Create player cards for real players only
+    playersList.innerHTML = realPlayers.map(player => `
         <div class="player-card">
             <div class="player-header">
                 <div class="player-name">${escapeHtml(player.display_name || player.name || 'Unknown')}</div>
