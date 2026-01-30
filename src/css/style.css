@@ -845,7 +845,8 @@ h1, h2, h3, h4 {
 }
 
 .gaming-icon.discord {
-    background: linear-gradient(135deg, #5865F2, #9B59B6);
+    background-image: url("../images/discord.webp");
+    background-size: cover;
 }
 
 .gaming-card h3 {
