@@ -1,0 +1,19 @@
+{
+  "status": "online",
+  "last_updated": "2026-01-30T17:23:33.482822",
+  "timestamp": 1769793813.482856,
+  "server_info": {
+    "current_round": "Unknown",
+    "next_round": "Unknown",
+    "total_players": 0,
+    "live_chat_enabled": true
+  },
+  "players": [],
+  "recent_chat": [],
+  "statistics": {
+    "total_online": 0,
+    "in_game": 0,
+    "in_lobby": 0,
+    "by_device": {}
+  }
+}
