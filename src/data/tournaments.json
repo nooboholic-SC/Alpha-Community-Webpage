@@ -220,10 +220,133 @@
       ]
     },
     {
+      "id": "alpha-bs-league-s3",
+      "title": "ALPHA BS LEAGUE S3",
+      "date": "AUG 31 2024 - SEP 1 2024",
+      "format": "2v2 | Best of 7 | Epic Mode | gloves",
+      "game": "BombSquad Team Match",
+      "description": "Raw talent from servers all over will be fighting here to be the ultimate champion.",
+      "winners": ["Azo Ben"],
+      "details": {
+        "format": [
+          "All matches were in epic mode",
+          "All matches were in duo mode (2v2)",
+          "Best of 7  rounds",
+          "All matches were with gloves"
+        ],
+        "rewards": {
+          "first": [
+            "Champion display role",
+            " Bombsquad Partner Server Ownership for 45 days"
+          ],
+          "second": [
+            "Admin role in any one server of choice for 45 days",
+            "Custom effect & Tag in any one server of choice for 45 days"
+          ],
+          "third": [
+            "VIP role in any one server of choice for 45 days"
+          ]
+        },
+        "highlights": [
+          "Thanks for the wonderful show of skills."
+        ]
+      },
+      "bracket": [
+        {
+          "title": "Grand Final",
+          "matches": [
+            "Azo Ben vs Zad Nitin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alpha-bs-league-s3",
+      "title": "ALPHA BS LEAGUE S3",
+      "date": "AUG 31 2024 - SEP 1 2024",
+      "format": "2v2 | Best of 7 | Epic Mode | gloves",
+      "game": "BombSquad Team Match",
+      "description": "Raw talent from servers all over will be fighting here to be the ultimate champion.",
+      "winners": ["Azo Ben"],
+      "details": {
+        "format": [
+          "All matches were in epic mode",
+          "All matches were in duo mode (2v2)",
+          "Best of 7  rounds",
+          "All matches were with gloves"
+        ],
+        "rewards": {
+          "first": [
+            "Champion display role",
+            " Bombsquad Partner Server Ownership for 45 days"
+          ],
+          "second": [
+            "Admin role in any one server of choice for 45 days",
+            "Custom effect & Tag in any one server of choice for 45 days"
+          ],
+          "third": [
+            "VIP role in any one server of choice for 45 days"
+          ]
+        },
+        "highlights": [
+          "Thanks for the wonderful show of skills."
+        ]
+      },
+      "bracket": [
+        {
+          "title": "Grand Final",
+          "matches": [
+            "Azo Ben vs Zad Nitin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alpha-bs-league-s2",
+      "title": "ALPHA BS LEAGUE S2",
+      "date": "May 4 2024 - May 5 2024",
+      "format": "2v2 | Best of 7 | Epic Mode",
+      "game": "BombSquad Team Match",
+      "description": "Raw talent from servers all over will be fighting here to be the ultimate champion.",
+      "winners": ["Yuno  BEN"],
+      "details": {
+        "format": [
+          "All matches were in epic mode",
+          "All matches were in duo mode (2v2)",
+          "Best of 3  rounds",
+          "All matches were streamed live"
+        ],
+        "rewards": {
+          "first": [
+            "Champion display role",
+            "Community spotlight in Discord"
+          ],
+          "second": [
+            "Runner-up role",
+            "Shoutout on socials"
+          ],
+          "third": [
+            "Bronze finisher role"
+          ]
+        },
+        "highlights": [
+          "Season 1 featured 26 teams and a packed finals weekend with record viewers."
+        ]
+      },
+      "bracket": [
+        {
+          "title": "Grand Final",
+          "matches": [
+            "Yuno  BEN vs Naruto Slashbyte"
+          ]
+        }
+      ]
+    },
+    {
       "id": "alpha-bs-league-s1",
       "title": "ALPHA BS LEAGUE S1",
       "date": "Feb 3 2024 - Feb 4 2024",
-      "format": "2v2 | Best of 3 | Epic Mode",
+      "format": "2v2 | Best of 7 | Epic Mode",
       "game": "BombSquad Team Match",
       "description": "Our inaugural season brought the community together for an unforgettable showdown.",
       "winners": ["Ghostoo  Karan"],
