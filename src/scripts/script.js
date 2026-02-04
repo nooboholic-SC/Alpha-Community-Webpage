@@ -169,6 +169,88 @@
             `;
         }
 
+        function buildDetailsHtml(details = {}) {
+            const formatSection = details.format ? `
+                <h4>Tournament Format</h4>
+                <ul>
+                    ${details.format.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            ` : '';
+
+            const rewards = details.rewards ? `
+                <h4>Tournament Rewards</h4>
+                <div class="rewards-grid">
+                    ${details.rewards.first ? `
+                        <div class="reward-card gold">
+                            <div class="reward-medal">🥇</div>
+                            <h5>First Place</h5>
+                            <ul>
+                                ${details.rewards.first.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${details.rewards.second ? `
+                        <div class="reward-card silver">
+                            <div class="reward-medal">🥈</div>
+                            <h5>Second Place</h5>
+                            <ul>
+                                ${details.rewards.second.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${details.rewards.third ? `
+                        <div class="reward-card bronze">
+                            <div class="reward-medal">🥉</div>
+                            <h5>Third Place</h5>
+                            <ul>
+                                ${details.rewards.third.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </div>
+            ` : '';
+
+            const notesSection = details.notes ? `
+                <h4>Important Notes</h4>
+                <ul>
+                    ${details.notes.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            ` : '';
+
+            const highlightsSection = details.highlights ? `
+                <h4>Tournament Highlights</h4>
+                <ul>
+                    ${details.highlights.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            ` : '';
+
+            return `
+                <div class="details-content">
+                    ${formatSection}
+                    ${rewards}
+                    ${notesSection}
+                    ${highlightsSection}
+                </div>
+            `;
+        }
+
+        function buildBracketHtml(bracket = []) {
+            return `
+                <div class="bracket-content">
+                    ${bracket.map(round => `
+                        <div class="bracket-round">
+                            <h5>${round.title}</h5>
+                            ${round.matches.map(match => `
+                                <div class="match">
+                                    <div class="match-teams">${match}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
         function buildTournamentCard(tournament, badgeLabel, badgeIcon) {
             const actions = `
                 <div class="tournament-actions">
@@ -181,10 +263,15 @@
                     <button class="tournament-btn bracket-btn" onclick="showPopup('${tournament.id}', 'bracket')">
                         <i class="fas fa-sitemap"></i> View Bracket
                     </button>
-                    ${tournament.registrationLink ? `
+                    ${tournament.registrationOpen ? `
                         <a class="tournament-btn register-btn" href="${tournament.registrationLink}" target="_blank" rel="noopener">
                             <i class="fas fa-link"></i> Register
                         </a>
+                    ` : ''}
+                    ${tournament.registrationOpen === false ? `
+                        <span class="tournament-status">
+                            <i class="fas fa-info-circle"></i> ${tournament.registrationStatusText || 'Registrations are not closed'}
+                        </span>
                     ` : ''}
                 </div>
             `;
@@ -285,11 +372,11 @@
             
             popupTitle.textContent = titles[type];
             if (type === 'details') {
-                popupContent.innerHTML = tournament.tournamentDetailsHtml || '';
+                popupContent.innerHTML = buildDetailsHtml(tournament.details);
             } else if (type === 'teams') {
                 popupContent.innerHTML = buildTeamsHtml(tournament.registeredTeams);
             } else if (type === 'bracket') {
-                popupContent.innerHTML = tournament.tournamentBracketHtml || '';
+                popupContent.innerHTML = buildBracketHtml(tournament.bracket);
             }
             
             // Show popup

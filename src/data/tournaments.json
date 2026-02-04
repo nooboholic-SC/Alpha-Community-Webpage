@@ -9,7 +9,38 @@
       "game": "BombSquad Soccer",
       "description": "Showcase your amazing soccer skills in Bombsquad and determine who is the best soccer team! The wait has been too long and finally it's here now!",
       "registrationLink": "https://discord.gg/alpha-community",
-      "tournamentDetailsHtml": "<div class=\"details-content\"><h4>Tournament Format</h4><ul><li>All matches will be in epic mode</li><li>All matches will be in trio mode (3v3)</li><li>All matches will be with gloves</li><li>All matches will be a single series, best of 3 soccer rounds</li><li>All matches will be live streamed in Alpha Community</li></ul><h4>Tournament Rewards</h4><div class=\"rewards-grid\"><div class=\"reward-card gold\"><div class=\"reward-medal\">🥇</div><h5>First Place</h5><ul><li>「🜲・𝕊𝕆ℂℂ𝔼ℝ 𝔾𝕆𝔸𝕋𝕊」display role</li><li>Adminship for 90 days</li><li>Custom effect and tag in any Alpha server</li><li>1 million owo / INR 100 each</li></ul></div><div class=\"reward-card silver\"><div class=\"reward-medal\">🥈</div><h5>Second Place</h5><ul><li>VIP status for 90 days</li><li>Custom effect and tag in any Alpha server</li><li>500k OwO each</li></ul></div><div class=\"reward-card bronze\"><div class=\"reward-medal\">🥉</div><h5>Third Place</h5><ul><li>Custom tag in any Alpha server for 90 days</li><li>250k OwO each</li></ul></div></div><h4>Important Notes</h4><p>Tournament Date: January 31 - February 1<br>Register your team in our Discord server before the deadline!</p></div>",
+      "registrationOpen": true,
+      "registrationStatusText": "Registrations are not closed",
+      "details": {
+        "format": [
+          "All matches will be in epic mode",
+          "All matches will be in trio mode (3v3)",
+          "All matches will be with gloves",
+          "All matches will be a single series, best of 3 soccer rounds",
+          "All matches will be live streamed in Alpha Community"
+        ],
+        "rewards": {
+          "first": [
+            "「🜲・𝕊𝕆ℂℂ𝔼ℝ 𝔾𝕆𝔸𝕋𝕊」display role",
+            "Adminship for 90 days",
+            "Custom effect and tag in any Alpha server",
+            "1 million owo / INR 100 each"
+          ],
+          "second": [
+            "VIP status for 90 days",
+            "Custom effect and tag in any Alpha server",
+            "500k OwO each"
+          ],
+          "third": [
+            "Custom tag in any Alpha server for 90 days",
+            "250k OwO each"
+          ]
+        },
+        "notes": [
+          "Tournament Date: January 31 - February 1",
+          "Register your team in our Discord server before the deadline!"
+        ]
+      },
       "registeredTeams": [
         {
           "name": "MAGUS",
@@ -94,7 +125,41 @@
           "players": ["SWAGGER", "FAKE GUY", "Pengu ❤️"]
         }
       ],
-      "tournamentBracketHtml": "<div class=\"bracket-content\"><div class=\"bracket-container\"><div class=\"bracket-side\"><h4>LEFT BRACKET</h4><div class=\"bracket-round\"><h5>ROUND 1</h5><div class=\"match\"><div class=\"match-teams\">[BRD ELITE] vs [TNT]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[TEAM 9] vs [DANCING DINOS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[ADRENALINE] vs [Guddav Biscuits]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[TEAM PIXEL] vs [DEADBOTS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match bye-match\"><div class=\"match-teams\">(PLOT ARMOUR - BYE)</div><div class=\"match-info\">Automatic advancement</div></div></div><div class=\"bracket-round\"><h5>SEMIFINALS</h5><div class=\"match\"><div class=\"match-teams\">Winner 1 vs Winner 2</div><div class=\"match-info\">TBD</div></div><div class=\"match\"><div class=\"match-teams\">Winner 3 vs Winner 4</div><div class=\"match-info\">TBD</div></div></div><div class=\"bracket-round\"><h5>LEFT FINAL</h5><div class=\"match final-match\"><div class=\"match-teams\">Semi 1 Winner vs Semi 2 Winner</div><div class=\"match-info\">Qualifies to Grand Final</div></div></div></div><div class=\"bracket-side\"><h4>RIGHT BRACKET</h4><div class=\"bracket-round\"><h5>ROUND 1</h5><div class=\"match\"><div class=\"match-teams\">[MINI ESTUPIDS] vs [AAND KILLERS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[Cyber Knights] vs [Devil]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[THE MORPHS] vs [MAGUS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[हिंदी दस्ते] vs [PHANTOM WOLVES]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match bye-match\"><div class=\"match-teams\">(PING BLAMERS - BYE)</div><div class=\"match-info\">Automatic advancement</div></div></div><div class=\"bracket-round\"><h5>SEMIFINALS</h5><div class=\"match\"><div class=\"match-teams\">Winner 1 vs Winner 2</div><div class=\"match-info\">TBD</div></div><div class=\"match\"><div class=\"match-teams\">Winner 3 vs Winner 4</div><div class=\"match-info\">TBD</div></div></div><div class=\"bracket-round\"><h5>RIGHT FINAL</h5><div class=\"match final-match\"><div class=\"match-teams\">Semi 1 Winner vs Semi 2 Winner</div><div class=\"match-info\">Qualifies to Grand Final</div></div></div></div></div><div class=\"bracket-round\" style=\"text-align: center; margin-top: 40px;\"><h5>GRAND FINAL</h5><div class=\"match final-match\" style=\"max-width: 400px; margin: 0 auto;\"><div class=\"match-teams\">Left Final Winner vs Right Final Winner</div><div class=\"match-info\">CHAMPIONSHIP MATCH</div><div class=\"match-status\">TO BE DETERMINED</div></div></div></div>"
+      "bracket": [
+        {
+          "title": "Left Bracket - Round 1",
+          "matches": [
+            "[BRD ELITE] vs [TNT]",
+            "[TEAM 9] vs [DANCING DINOS]",
+            "[ADRENALINE] vs [Guddav Biscuits]",
+            "[TEAM PIXEL] vs [DEADBOTS]",
+            "(PLOT ARMOUR - BYE)"
+          ]
+        },
+        {
+          "title": "Right Bracket - Round 1",
+          "matches": [
+            "[MINI ESTUPIDS] vs [AAND KILLERS]",
+            "[Cyber Knights] vs [Devil]",
+            "[THE MORPHS] vs [MAGUS]",
+            "[हिंदी दस्ते] vs [PHANTOM WOLVES]",
+            "(PING BLAMERS - BYE)"
+          ]
+        },
+        {
+          "title": "Semifinals",
+          "matches": [
+            "Winner 1 vs Winner 2",
+            "Winner 3 vs Winner 4"
+          ]
+        },
+        {
+          "title": "Finals",
+          "matches": [
+            "Left Final Winner vs Right Final Winner"
+          ]
+        }
+      ]
     }
   ],
   "archived": [
@@ -122,7 +187,14 @@
           "players": ["miltiaapp1", "L E V I 🦇", "мσяηιηg ѕтαя"]
         }
       ],
-      "tournamentBracketHtml": "<div class=\"bracket-content\"><div class=\"match final-match\"><div class=\"match-teams\">Plot Armour vs BRD Elite</div><div class=\"match-info\">Grand Final</div><div class=\"match-status\">Champion: Plot Armour</div></div></div>"
+      "bracket": [
+        {
+          "title": "Grand Final",
+          "matches": [
+            "Plot Armour vs BRD Elite"
+          ]
+        }
+      ]
     }
   ]
 }
