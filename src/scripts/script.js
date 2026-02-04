@@ -336,7 +336,17 @@
                 const activeContainer = document.getElementById('activeTournament');
                 const archivedList = document.getElementById('archivedList');
 
-                if (data.active && data.active.length > 0) {
+                if (archivedList) {
+                    archivedList.setAttribute('hidden', '');
+                }
+
+                if (data.activeEnabled === false || !data.active || data.active.length === 0) {
+                    activeContainer.innerHTML = `
+                        <div class="tournament-empty">
+                            No active tournament currently, stay tuned.
+                        </div>
+                    `;
+                } else if (data.active && data.active.length > 0) {
                     data.active.forEach(tournament => tournamentMap.set(tournament.id, tournament));
                     activeContainer.innerHTML = buildTournamentCard(data.active[0], 'ACTIVE TOURNAMENT', 'fas fa-fire');
                 }

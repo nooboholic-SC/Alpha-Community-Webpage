@@ -1302,6 +1302,32 @@ h1, h2, h3, h4 {
     gap: 24px;
 }
 
+.archived-list[hidden] {
+    display: none !important;
+}
+
+.tournament-empty {
+    background: rgba(18, 24, 38, 0.95);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    border: 2px dashed rgba(139, 147, 176, 0.4);
+    color: var(--light);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.tournament-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--light);
+    background: rgba(139, 147, 176, 0.2);
+    border: 1px solid rgba(139, 147, 176, 0.3);
+    padding: 10px 16px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+}
+
 .tournament-winners {
     margin: 20px 0 30px;
     padding: 20px;
