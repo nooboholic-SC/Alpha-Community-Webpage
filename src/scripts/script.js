@@ -142,80 +142,13 @@
 
 
 
-        // Tournament Data
-        const tournamentData = {
-            details: `
-                <div class="details-content">
-                    <h4>Tournament Format</h4>
-                    <ul>
-                        <li>All matches will be in epic mode</li>
-                        <li>All matches will be in trio mode (3v3)</li>
-                        <li>All matches will be with gloves</li>
-                        <li>All matches will be a single series, best of 3 soccer rounds</li>
-                        <li>All matches will be live streamed in Alpha Community</li>
-                    </ul>
-                    
-                    <h4>Tournament Rewards</h4>
-                    <div class="rewards-grid">
-                        <div class="reward-card gold">
-                            <div class="reward-medal">🥇</div>
-                            <h5>First Place</h5>
-                            <ul>
-                                <li>「🜲・𝕊𝕆ℂℂ𝔼ℝ 𝔾𝕆𝔸𝕋𝕊」display role</li>
-                                <li>Adminship for 90 days</li>
-                                <li>Custom effect and tag in any Alpha server</li>
-                                <li>1 million owo / INR 100 each</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="reward-card silver">
-                            <div class="reward-medal">🥈</div>
-                            <h5>Second Place</h5>
-                            <ul>
-                                <li>VIP status for 90 days</li>
-                                <li>Custom effect and tag in any Alpha server</li>
-                                <li>500k OwO each</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="reward-card bronze">
-                            <div class="reward-medal">🥉</div>
-                            <h5>Third Place</h5>
-                            <ul>
-                                <li>Custom tag in any Alpha server for 90 days</li>
-                                <li>250k OwO each</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <h4>Important Notes</h4>
-                    <p>Tournament Date: January 31 - February 1<br>
-                    Register your team in our Discord server before the deadline!</p>
-                </div>
-            `,
-            
-            teams: `
+        const TOURNAMENTS_FILE = 'src/data/tournaments.json';
+        const tournamentMap = new Map();
+
+        function buildTeamsHtml(teams = []) {
+            return `
                 <div class="teams-content">
-                    ${[
-                        {name: 'MAGUS', players: ['Pioosh', 'Yuta', 'Daemon'], sub: 'Oldmaster'},
-                        {name: 'AAND KILLERS', players: ['Warmachine', 'Nooboholic', 'Adiismoredumb'], sub: 'Sanchit'},
-                        {name: 'DeViL', players: ['Defender', 'Voidpulse', 'Luci']},
-                        {name: 'TNT', players: ['THEGODY', 'Tc ..007', 'Thundér']},
-                        {name: 'BRD Elite', players: ['𝗥𝔞𝐣ɑ 𝔹ⱥ฿Մ', 'ғʟᴀ֟፝ᴍᴇx࿐', 'ℑ𝔱𝔖_𝔇𝔞𝔎𝔲'], sub: 'Bouncer'},
-                        {name: 'ADRENALINE', players: ['Donny(7)', '👽 legend 👽', 'piXel'], sub: 'AB-GAMER'},
-                        {name: 'Phantom wolves', players: ['Wolfbleed', 'Winninghu6', 'Orbitalquo'], sub: 'Faction'},
-                        {name: 'Dancing dinos', players: ['VIP Rascal', 'Chisiya', 'Kartik'], sub: 'Zaref'},
-                        {name: 'Team 9 🗿', players: ['Ekam_07', 'GOJO7', 'Foxey47']},
-                        {name: 'Team Pixel', players: ['KINGofCri2', 'Zuhyb', 'Blurry'], sub: 'Normii'},
-                        {name: 'Plot Armour', players: ['Alpha', 'Babur', 'Reen']},
-                        {name: 'Mini Estupids', players: ['Slashbyte', 'Defiant', 'Ben'], sub: 'Zad'},
-                        {name: 'The Morphs', players: ['miltiaapp1', 'L E V I 🦇', 'мσяηιηg ѕтαя']},
-                        {name: 'हवसी दरिंदे', players: ['Selbel', 'NerdyOP', 'Addictives']},
-                        {name: 'Cyber knights', players: ['DustyAccou', 'Mijwal77', 'Cypher27x'], sub: 'Oddynamic'},
-                        {name: 'Gudday biscuits', players: ['Guddu:)', 'Sahilllllll', 'Chimkandi'], sub: 'Nippy'},
-                        {name: 'Ping Blamers', players: ['Baddie Hunter', 'IamJustAFish', 'Jal Pradushan']},
-                        {name: 'DEADBOTS', players: ['SWAGGER', 'FAKE GUY', 'Pengu ❤️']}
-                    ].map(team => `
+                    ${teams.map(team => `
                         <div class="team-card">
                             <div class="team-name">${team.name}</div>
                             ${team.players.map(player => `
@@ -233,125 +166,212 @@
                         </div>
                     `).join('')}
                 </div>
-            `,
-            
-            bracket: `
+            `;
+        }
+
+        function buildDetailsHtml(details = {}) {
+            const formatSection = details.format ? `
+                <h4>Tournament Format</h4>
+                <ul>
+                    ${details.format.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            ` : '';
+
+            const rewards = details.rewards ? `
+                <h4>Tournament Rewards</h4>
+                <div class="rewards-grid">
+                    ${details.rewards.first ? `
+                        <div class="reward-card gold">
+                            <div class="reward-medal">🥇</div>
+                            <h5>First Place</h5>
+                            <ul>
+                                ${details.rewards.first.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${details.rewards.second ? `
+                        <div class="reward-card silver">
+                            <div class="reward-medal">🥈</div>
+                            <h5>Second Place</h5>
+                            <ul>
+                                ${details.rewards.second.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${details.rewards.third ? `
+                        <div class="reward-card bronze">
+                            <div class="reward-medal">🥉</div>
+                            <h5>Third Place</h5>
+                            <ul>
+                                ${details.rewards.third.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </div>
+            ` : '';
+
+            const notesSection = details.notes ? `
+                <h4>Important Notes</h4>
+                <ul>
+                    ${details.notes.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            ` : '';
+
+            const highlightsSection = details.highlights ? `
+                <h4>Tournament Highlights</h4>
+                <ul>
+                    ${details.highlights.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            ` : '';
+
+            return `
+                <div class="details-content">
+                    ${formatSection}
+                    ${rewards}
+                    ${notesSection}
+                    ${highlightsSection}
+                </div>
+            `;
+        }
+
+        function buildBracketHtml(bracket = []) {
+            return `
                 <div class="bracket-content">
-                    <div class="bracket-container">
-                        <div class="bracket-side">
-                            <h4>LEFT BRACKET</h4>
-                            
-                            <div class="bracket-round">
-                                <h5>ROUND 1</h5>
+                    ${bracket.map(round => `
+                        <div class="bracket-round">
+                            <h5>${round.title}</h5>
+                            ${round.matches.map(match => `
                                 <div class="match">
-                                    <div class="match-teams">[BRD ELITE] vs [TNT]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
+                                    <div class="match-teams">${match}</div>
                                 </div>
-                                <div class="match">
-                                    <div class="match-teams">[TEAM 9] vs [DANCING DINOS]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
-                                </div>
-                                <div class="match">
-                                    <div class="match-teams">[ADRENALINE] vs [Guddav Biscuits]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
-                                </div>
-                                <div class="match">
-                                    <div class="match-teams">[TEAM PIXEL] vs [DEADBOTS]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
-                                </div>
-                                <div class="match bye-match">
-                                    <div class="match-teams">(PLOT ARMOUR - BYE)</div>
-                                    <div class="match-info">Automatic advancement</div>
-                                </div>
-                            </div>
-                            
-                            <div class="bracket-round">
-                                <h5>SEMIFINALS</h5>
-                                <div class="match">
-                                    <div class="match-teams">Winner 1 vs Winner 2</div>
-                                    <div class="match-info">TBD</div>
-                                </div>
-                                <div class="match">
-                                    <div class="match-teams">Winner 3 vs Winner 4</div>
-                                    <div class="match-info">TBD</div>
-                                </div>
-                            </div>
-                            
-                            <div class="bracket-round">
-                                <h5>LEFT FINAL</h5>
-                                <div class="match final-match">
-                                    <div class="match-teams">Semi 1 Winner vs Semi 2 Winner</div>
-                                    <div class="match-info">Qualifies to Grand Final</div>
-                                </div>
-                            </div>
+                            `).join('')}
                         </div>
-                        
-                        <div class="bracket-side">
-                            <h4>RIGHT BRACKET</h4>
-                            
-                            <div class="bracket-round">
-                                <h5>ROUND 1</h5>
-                                <div class="match">
-                                    <div class="match-teams">[MINI ESTUPIDS] vs [AAND KILLERS]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
-                                </div>
-                                <div class="match">
-                                    <div class="match-teams">[Cyber Knights] vs [Devil]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
-                                </div>
-                                <div class="match">
-                                    <div class="match-teams">[THE MORPHS] vs [MAGUS]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
-                                </div>
-                                <div class="match">
-                                    <div class="match-teams">[हिंदी दस्ते] vs [PHANTOM WOLVES]</div>
-                                    <div class="match-info">Best of 3 | Epic Soccer</div>
-                                </div>
-                                <div class="match bye-match">
-                                    <div class="match-teams">(PING BLAMERS - BYE)</div>
-                                    <div class="match-info">Automatic advancement</div>
-                                </div>
-                            </div>
-                            
-                            <div class="bracket-round">
-                                <h5>SEMIFINALS</h5>
-                                <div class="match">
-                                    <div class="match-teams">Winner 1 vs Winner 2</div>
-                                    <div class="match-info">TBD</div>
-                                </div>
-                                <div class="match">
-                                    <div class="match-teams">Winner 3 vs Winner 4</div>
-                                    <div class="match-info">TBD</div>
-                                </div>
-                            </div>
-                            
-                            <div class="bracket-round">
-                                <h5>RIGHT FINAL</h5>
-                                <div class="match final-match">
-                                    <div class="match-teams">Semi 1 Winner vs Semi 2 Winner</div>
-                                    <div class="match-info">Qualifies to Grand Final</div>
-                                </div>
-                            </div>
-                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function buildTournamentCard(tournament, badgeLabel, badgeIcon) {
+            const actions = `
+                <div class="tournament-actions">
+                    <button class="tournament-btn details-btn" onclick="showPopup('${tournament.id}', 'details')">
+                        <i class="fas fa-info-circle"></i> Tournament Details
+                    </button>
+                    <button class="tournament-btn teams-btn" onclick="showPopup('${tournament.id}', 'teams')">
+                        <i class="fas fa-users"></i> View Teams
+                    </button>
+                    <button class="tournament-btn bracket-btn" onclick="showPopup('${tournament.id}', 'bracket')">
+                        <i class="fas fa-sitemap"></i> View Bracket
+                    </button>
+                    ${tournament.registrationOpen ? `
+                        <a class="tournament-btn register-btn" href="${tournament.registrationLink}" target="_blank" rel="noopener">
+                            <i class="fas fa-link"></i> Register
+                        </a>
+                    ` : ''}
+                    ${tournament.registrationOpen === false ? `
+                        <span class="tournament-status">
+                            <i class="fas fa-info-circle"></i> ${tournament.registrationStatusText || 'Registrations are not closed'}
+                        </span>
+                    ` : ''}
+                </div>
+            `;
+
+            const winners = tournament.winners ? `
+                <div class="tournament-winners">
+                    <h4>Winners</h4>
+                    <ul>
+                        ${tournament.winners.map(winner => `<li>${winner}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : '';
+
+            return `
+                <div class="tournament-card">
+                    <div class="tournament-badge">
+                        <i class="${badgeIcon}"></i> ${badgeLabel}
                     </div>
-                    
-                    <div class="bracket-round" style="text-align: center; margin-top: 40px;">
-                        <h5>GRAND FINAL</h5>
-                        <div class="match final-match" style="max-width: 400px; margin: 0 auto;">
-                            <div class="match-teams">Left Final Winner vs Right Final Winner</div>
-                            <div class="match-info">CHAMPIONSHIP MATCH</div>
-                            <div class="match-status">TO BE DETERMINED</div>
+                    <div class="tournament-header">
+                        <h3>${tournament.title}</h3>
+                        <p class="tournament-quote">${tournament.quote}</p>
+                    </div>
+                    <div class="tournament-details">
+                        <div class="detail-row">
+                            <div class="detail-item">
+                                <i class="far fa-calendar"></i>
+                                <div>
+                                    <strong>Date</strong>
+                                    <p>${tournament.date}</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>Format</strong>
+                                    <p>${tournament.format}</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-gamepad"></i>
+                                <div>
+                                    <strong>Game</strong>
+                                    <p>${tournament.game}</p>
+                                </div>
+                            </div>
                         </div>
+                        <p class="tournament-description">${tournament.description}</p>
+                        ${winners}
+                        ${actions}
                     </div>
                 </div>
-            `
-        };
+            `;
+        }
+
+        async function loadTournamentData() {
+            try {
+                const response = await fetch(TOURNAMENTS_FILE + '?t=' + Date.now());
+                if (!response.ok) {
+                    return;
+                }
+                const data = await response.json();
+                const activeContainer = document.getElementById('activeTournament');
+                const archivedList = document.getElementById('archivedList');
+
+                if (archivedList) {
+                    archivedList.setAttribute('hidden', '');
+                }
+
+                if (data.activeEnabled === false || !data.active || data.active.length === 0) {
+                    activeContainer.innerHTML = `
+                        <div class="tournament-empty">
+                            No active tournament currently, stay tuned.
+                        </div>
+                    `;
+                } else if (data.active && data.active.length > 0) {
+                    data.active.forEach(tournament => tournamentMap.set(tournament.id, tournament));
+                    activeContainer.innerHTML = buildTournamentCard(data.active[0], 'ACTIVE TOURNAMENT', 'fas fa-fire');
+                }
+
+                if (data.archived && data.archived.length > 0) {
+                    archivedList.innerHTML = data.archived.map(tournament => {
+                        tournamentMap.set(tournament.id, tournament);
+                        return buildTournamentCard(tournament, 'ARCHIVED TOURNAMENT', 'fas fa-archive');
+                    }).join('');
+                }
+            } catch (error) {
+                console.error('Failed to load tournament data', error);
+            }
+        }
 
         // Popup Functions
-        function showPopup(type) {
+        function showPopup(tournamentId, type) {
             const popupOverlay = document.getElementById('popupOverlay');
             const popupTitle = document.getElementById('popupTitle');
             const popupContent = document.getElementById('popupContent');
+            const tournament = tournamentMap.get(tournamentId);
+
+            if (!tournament) {
+                return;
+            }
             
             // Set title based on type
             const titles = {
@@ -361,7 +381,13 @@
             };
             
             popupTitle.textContent = titles[type];
-            popupContent.innerHTML = tournamentData[type];
+            if (type === 'details') {
+                popupContent.innerHTML = buildDetailsHtml(tournament.details);
+            } else if (type === 'teams') {
+                popupContent.innerHTML = buildTeamsHtml(tournament.registeredTeams);
+            } else if (type === 'bracket') {
+                popupContent.innerHTML = buildBracketHtml(tournament.bracket);
+            }
             
             // Show popup
             popupOverlay.classList.add('active');
@@ -407,5 +433,21 @@
                 `;
                 document.body.insertAdjacentHTML('beforeend', popupHTML);
             }
-        });
 
+            const archivedToggle = document.getElementById('archivedToggle');
+            const archivedList = document.getElementById('archivedList');
+
+            if (archivedToggle && archivedList) {
+                archivedToggle.addEventListener('click', () => {
+                    const isHidden = archivedList.hasAttribute('hidden');
+                    if (isHidden) {
+                        archivedList.removeAttribute('hidden');
+                    } else {
+                        archivedList.setAttribute('hidden', '');
+                    }
+                    archivedToggle.setAttribute('aria-expanded', String(isHidden));
+                });
+            }
+
+            loadTournamentData();
+        });
