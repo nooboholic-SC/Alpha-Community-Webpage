@@ -218,6 +218,48 @@
           ]
         }
       ]
+    },
+    {
+      "id": "alpha-bs-league-s1",
+      "title": "ALPHA BS LEAGUE S1",
+      "date": "Feb 3 2024 - Feb 4 2024",
+      "format": "2v2 | Best of 3 | Epic Mode",
+      "game": "BombSquad Team Match",
+      "description": "Our inaugural season brought the community together for an unforgettable showdown.",
+      "winners": ["Ghostoo  Karan"],
+      "details": {
+        "format": [
+          "All matches were in epic mode",
+          "All matches were in duo mode (2v2)",
+          "Best of 3  rounds",
+          "All matches were streamed live"
+        ],
+        "rewards": {
+          "first": [
+            "Champion display role",
+            "Community spotlight in Discord"
+          ],
+          "second": [
+            "Runner-up role",
+            "Shoutout on socials"
+          ],
+          "third": [
+            "Bronze finisher role"
+          ]
+        },
+        "highlights": [
+          "Season 1 featured 26 teams and a packed finals weekend with record viewers."
+        ]
+      },
+      "bracket": [
+        {
+          "title": "Grand Final",
+          "matches": [
+            "Ghostoo Karan vs Professor Daemon"
+          ]
+        }
+      ]
     }
+
   ]
 }
