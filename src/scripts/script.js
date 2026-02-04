@@ -326,6 +326,24 @@
             `;
         }
 
+        function buildArchivedCard(tournament) {
+            return `
+                <button class="archived-card" type="button" onclick="showPopup('${tournament.id}', 'details')">
+                    <div class="archived-card-header">
+                        <h4>${tournament.title}</h4>
+                        <span class="archived-date">${tournament.date}</span>
+                    </div>
+                    <div class="archived-card-body">
+                        <p>${tournament.format}</p>
+                        <p>${tournament.game}</p>
+                    </div>
+                    <div class="archived-card-action">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </div>
+                </button>
+            `;
+        }
+
         async function loadTournamentData() {
             try {
                 const response = await fetch(TOURNAMENTS_FILE + '?t=' + Date.now());
@@ -337,7 +355,7 @@
                 const archivedList = document.getElementById('archivedList');
 
                 if (archivedList) {
-                    archivedList.setAttribute('hidden', '');
+                    archivedList.classList.remove('is-open');
                 }
 
                 if (data.activeEnabled === false || !data.active || data.active.length === 0) {
@@ -354,7 +372,7 @@
                 if (data.archived && data.archived.length > 0) {
                     archivedList.innerHTML = data.archived.map(tournament => {
                         tournamentMap.set(tournament.id, tournament);
-                        return buildTournamentCard(tournament, 'ARCHIVED TOURNAMENT', 'fas fa-archive');
+                        return buildArchivedCard(tournament);
                     }).join('');
                 }
             } catch (error) {
@@ -439,13 +457,8 @@
 
             if (archivedToggle && archivedList) {
                 archivedToggle.addEventListener('click', () => {
-                    const isHidden = archivedList.hasAttribute('hidden');
-                    if (isHidden) {
-                        archivedList.removeAttribute('hidden');
-                    } else {
-                        archivedList.setAttribute('hidden', '');
-                    }
-                    archivedToggle.setAttribute('aria-expanded', String(isHidden));
+                    const isOpen = archivedList.classList.toggle('is-open');
+                    archivedToggle.setAttribute('aria-expanded', String(isOpen));
                 });
             }
 
