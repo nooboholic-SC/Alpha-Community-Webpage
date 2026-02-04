@@ -169,7 +169,7 @@
             `;
         }
 
-        function buildDetailsHtml(details = {}) {
+        function buildDetailsHtml(details = {}, tournament = {}) {
             const formatSection = details.format ? `
                 <h4>Tournament Format</h4>
                 <ul>
@@ -224,12 +224,29 @@
                 </ul>
             ` : '';
 
+            const winnersSection = tournament.winners ? `
+                <h4>Winners</h4>
+                <ul>
+                    ${tournament.winners.map(winner => `<li>${winner}</li>`).join('')}
+                </ul>
+            ` : '';
+
+            const finalMatch = tournament.bracket && tournament.bracket.length
+                ? tournament.bracket[tournament.bracket.length - 1].matches?.[0]
+                : null;
+            const finalMatchSection = finalMatch ? `
+                <h4>Final Match</h4>
+                <p>${finalMatch}</p>
+            ` : '';
+
             return `
                 <div class="details-content">
                     ${formatSection}
                     ${rewards}
                     ${notesSection}
                     ${highlightsSection}
+                    ${winnersSection}
+                    ${finalMatchSection}
                 </div>
             `;
         }
@@ -400,7 +417,7 @@
             
             popupTitle.textContent = titles[type];
             if (type === 'details') {
-                popupContent.innerHTML = buildDetailsHtml(tournament.details);
+                popupContent.innerHTML = buildDetailsHtml(tournament.details, tournament);
             } else if (type === 'teams') {
                 popupContent.innerHTML = buildTeamsHtml(tournament.registeredTeams);
             } else if (type === 'bracket') {
