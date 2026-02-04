@@ -167,7 +167,6 @@
     {
       "id": "alpha-bs-soccer-league-s1",
       "title": "ALPHA BS SOCCER LEAGUE S1",
-      "quote": "\"Champions keep playing until they get it right.\" – Billie Jean King",
       "date": "July 15 - July 16",
       "format": "3v3 | Best of 3 | Epic Mode",
       "game": "BombSquad Soccer",
@@ -180,6 +179,19 @@
           "Best of 3 soccer rounds",
           "All matches were streamed live"
         ],
+        "rewards": {
+          "first": [
+            "Champion display role",
+            "Community spotlight in Discord"
+          ],
+          "second": [
+            "Runner-up role",
+            "Shoutout on socials"
+          ],
+          "third": [
+            "Bronze finisher role"
+          ]
+        },
         "highlights": [
           "Season 1 featured 16 teams and a packed finals weekend with record viewers."
         ]
