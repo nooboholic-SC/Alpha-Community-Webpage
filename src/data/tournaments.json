@@ -172,17 +172,7 @@
       "game": "BombSquad Soccer",
       "description": "Our inaugural season brought the community together for an unforgettable showdown.",
       "winners": ["Plot Armour", "BRD Elite", "The Morphs"],
-      "details": {
-        "format": [
-          "All matches were in epic mode",
-          "All matches were in trio mode (3v3)",
-          "Best of 3 soccer rounds",
-          "All matches were streamed live"
-        ],
-        "highlights": [
-          "Season 1 featured 16 teams and a packed finals weekend with record viewers."
-        ]
-      },
+      "tournamentDetailsHtml": "<div class=\"details-content\"><h4>Tournament Format</h4><ul><li>All matches were in epic mode</li><li>All matches were in trio mode (3v3)</li><li>Best of 3 soccer rounds</li><li>All matches were streamed live</li></ul><h4>Tournament Highlights</h4><p>Season 1 featured 16 teams and a packed finals weekend with record viewers.</p></div>",
       "registeredTeams": [
         {
           "name": "Plot Armour",

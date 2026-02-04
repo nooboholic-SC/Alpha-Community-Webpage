@@ -1302,18 +1302,6 @@ h1, h2, h3, h4 {
     gap: 24px;
 }
 
-.tournament-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--light);
-    background: rgba(139, 147, 176, 0.2);
-    border: 1px solid rgba(139, 147, 176, 0.3);
-    padding: 10px 16px;
-    border-radius: var(--border-radius-sm);
-    font-weight: 600;
-}
-
 .tournament-winners {
     margin: 20px 0 30px;
     padding: 20px;
