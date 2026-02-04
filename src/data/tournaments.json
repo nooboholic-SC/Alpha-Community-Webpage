@@ -9,7 +9,7 @@
       "game": "BombSquad Soccer",
       "description": "Showcase your amazing soccer skills in Bombsquad and determine who is the best soccer team! The wait has been too long and finally it's here now!",
       "registrationLink": "https://discord.gg/alpha-community",
-      "registrationOpen": true,
+      "registrationOpen": false,
       "registrationStatusText": "Registrations are not closed",
       "details": {
         "format": [
