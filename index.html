@@ -398,58 +398,12 @@
             <p class="section-subtitle">Competitive gaming events</p>
         </div>
         
-        <div class="tournament-card">
-            <div class="tournament-badge">
-                <i class="fas fa-fire"></i> ACTIVE TOURNAMENT
-            </div>
-            
-            <div class="tournament-header">
-                <h3>ALPHA BS SOCCER LEAGUE S2</h3>
-                <p class="tournament-quote">"Power isn't determined by ability. It's determined by the will to use it." – Madara Uchiha</p>
-            </div>
-            
-            <div class="tournament-details">
-                <div class="detail-row">
-                    <div class="detail-item">
-                        <i class="far fa-calendar"></i>
-                        <div>
-                            <strong>Date</strong>
-                            <p>January 31 - February 1</p>
-                        </div>
-                    </div>
-                    <div class="detail-item">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <strong>Format</strong>
-                            <p>3v3 | Best of 3 | Epic Mode</p>
-                        </div>
-                    </div>
-                    <div class="detail-item">
-                        <i class="fas fa-gamepad"></i>
-                        <div>
-                            <strong>Game</strong>
-                            <p>BombSquad Soccer</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <p class="tournament-description">
-                    Showcase your amazing soccer skills in Bombsquad and determine who is the best soccer team! 
-                    The wait has been too long and finally it's here now!
-                </p>
-                
-                <div class="tournament-actions">
-                    <button class="tournament-btn details-btn" onclick="showPopup('details')">
-                        <i class="fas fa-info-circle"></i> Tournament Details
-                    </button>
-                    <button class="tournament-btn teams-btn" onclick="showPopup('teams')">
-                        <i class="fas fa-users"></i> View Teams
-                    </button>
-                    <button class="tournament-btn bracket-btn" onclick="showPopup('bracket')">
-                        <i class="fas fa-sitemap"></i> View Bracket
-                    </button>
-                </div>
-            </div>
+        <div id="activeTournament"></div>
+        <div class="archived-tournaments">
+            <button class="tournament-btn archived-toggle" id="archivedToggle" aria-expanded="false">
+                <i class="fas fa-archive"></i> Archived Tournaments
+            </button>
+            <div class="archived-list" id="archivedList"></div>
         </div>
     </div>
 </section>
