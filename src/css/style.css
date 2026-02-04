@@ -1272,9 +1272,53 @@ h1, h2, h3, h4 {
     color: white;
 }
 
+.register-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    text-decoration: none;
+}
+
 .tournament-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
+}
+
+.archived-tournaments {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.archived-toggle {
+    align-self: flex-start;
+    background: rgba(139, 147, 176, 0.2);
+    color: var(--light);
+    border: 1px solid rgba(139, 147, 176, 0.4);
+}
+
+.archived-list {
+    display: grid;
+    gap: 24px;
+}
+
+.tournament-winners {
+    margin: 20px 0 30px;
+    padding: 20px;
+    background: rgba(10, 14, 23, 0.5);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(139, 147, 176, 0.2);
+}
+
+.tournament-winners h4 {
+    color: var(--light);
+    margin-bottom: 10px;
+}
+
+.tournament-winners ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--gray);
 }
 
 /* ===== POPUP STYLES ===== */

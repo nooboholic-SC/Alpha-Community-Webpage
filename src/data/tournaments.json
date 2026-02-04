@@ -1,0 +1,128 @@
+{
+  "active": [
+    {
+      "id": "alpha-bs-soccer-league-s2",
+      "title": "ALPHA BS SOCCER LEAGUE S2",
+      "quote": "\"Power isn't determined by ability. It's determined by the will to use it.\" – Madara Uchiha",
+      "date": "January 31 - February 1",
+      "format": "3v3 | Best of 3 | Epic Mode",
+      "game": "BombSquad Soccer",
+      "description": "Showcase your amazing soccer skills in Bombsquad and determine who is the best soccer team! The wait has been too long and finally it's here now!",
+      "registrationLink": "https://discord.gg/alpha-community",
+      "tournamentDetailsHtml": "<div class=\"details-content\"><h4>Tournament Format</h4><ul><li>All matches will be in epic mode</li><li>All matches will be in trio mode (3v3)</li><li>All matches will be with gloves</li><li>All matches will be a single series, best of 3 soccer rounds</li><li>All matches will be live streamed in Alpha Community</li></ul><h4>Tournament Rewards</h4><div class=\"rewards-grid\"><div class=\"reward-card gold\"><div class=\"reward-medal\">🥇</div><h5>First Place</h5><ul><li>「🜲・𝕊𝕆ℂℂ𝔼ℝ 𝔾𝕆𝔸𝕋𝕊」display role</li><li>Adminship for 90 days</li><li>Custom effect and tag in any Alpha server</li><li>1 million owo / INR 100 each</li></ul></div><div class=\"reward-card silver\"><div class=\"reward-medal\">🥈</div><h5>Second Place</h5><ul><li>VIP status for 90 days</li><li>Custom effect and tag in any Alpha server</li><li>500k OwO each</li></ul></div><div class=\"reward-card bronze\"><div class=\"reward-medal\">🥉</div><h5>Third Place</h5><ul><li>Custom tag in any Alpha server for 90 days</li><li>250k OwO each</li></ul></div></div><h4>Important Notes</h4><p>Tournament Date: January 31 - February 1<br>Register your team in our Discord server before the deadline!</p></div>",
+      "registeredTeams": [
+        {
+          "name": "MAGUS",
+          "players": ["Pioosh", "Yuta", "Daemon"],
+          "sub": "Oldmaster"
+        },
+        {
+          "name": "AAND KILLERS",
+          "players": ["Warmachine", "Nooboholic", "Adiismoredumb"],
+          "sub": "Sanchit"
+        },
+        {
+          "name": "DeViL",
+          "players": ["Defender", "Voidpulse", "Luci"]
+        },
+        {
+          "name": "TNT",
+          "players": ["THEGODY", "Tc ..007", "Thundér"]
+        },
+        {
+          "name": "BRD Elite",
+          "players": ["𝗥𝔞𝐣ɑ 𝔹ⱥ฿Մ", "ғʟᴀ֟፝ᴍᴇx࿐", "ℑ𝔱𝔖_𝔇𝔞𝔎𝔲"],
+          "sub": "Bouncer"
+        },
+        {
+          "name": "ADRENALINE",
+          "players": ["Donny(7)", "👽 legend 👽", "piXel"],
+          "sub": "AB-GAMER"
+        },
+        {
+          "name": "Phantom wolves",
+          "players": ["Wolfbleed", "Winninghu6", "Orbitalquo"],
+          "sub": "Faction"
+        },
+        {
+          "name": "Dancing dinos",
+          "players": ["VIP Rascal", "Chisiya", "Kartik"],
+          "sub": "Zaref"
+        },
+        {
+          "name": "Team 9 🗿",
+          "players": ["Ekam_07", "GOJO7", "Foxey47"]
+        },
+        {
+          "name": "Team Pixel",
+          "players": ["KINGofCri2", "Zuhyb", "Blurry"],
+          "sub": "Normii"
+        },
+        {
+          "name": "Plot Armour",
+          "players": ["Alpha", "Babur", "Reen"]
+        },
+        {
+          "name": "Mini Estupids",
+          "players": ["Slashbyte", "Defiant", "Ben"],
+          "sub": "Zad"
+        },
+        {
+          "name": "The Morphs",
+          "players": ["miltiaapp1", "L E V I 🦇", "мσяηιηg ѕтαя"]
+        },
+        {
+          "name": "हवसी दरिंदे",
+          "players": ["Selbel", "NerdyOP", "Addictives"]
+        },
+        {
+          "name": "Cyber knights",
+          "players": ["DustyAccou", "Mijwal77", "Cypher27x"],
+          "sub": "Oddynamic"
+        },
+        {
+          "name": "Gudday biscuits",
+          "players": ["Guddu:)", "Sahilllllll", "Chimkandi"],
+          "sub": "Nippy"
+        },
+        {
+          "name": "Ping Blamers",
+          "players": ["Baddie Hunter", "IamJustAFish", "Jal Pradushan"]
+        },
+        {
+          "name": "DEADBOTS",
+          "players": ["SWAGGER", "FAKE GUY", "Pengu ❤️"]
+        }
+      ],
+      "tournamentBracketHtml": "<div class=\"bracket-content\"><div class=\"bracket-container\"><div class=\"bracket-side\"><h4>LEFT BRACKET</h4><div class=\"bracket-round\"><h5>ROUND 1</h5><div class=\"match\"><div class=\"match-teams\">[BRD ELITE] vs [TNT]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[TEAM 9] vs [DANCING DINOS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[ADRENALINE] vs [Guddav Biscuits]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[TEAM PIXEL] vs [DEADBOTS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match bye-match\"><div class=\"match-teams\">(PLOT ARMOUR - BYE)</div><div class=\"match-info\">Automatic advancement</div></div></div><div class=\"bracket-round\"><h5>SEMIFINALS</h5><div class=\"match\"><div class=\"match-teams\">Winner 1 vs Winner 2</div><div class=\"match-info\">TBD</div></div><div class=\"match\"><div class=\"match-teams\">Winner 3 vs Winner 4</div><div class=\"match-info\">TBD</div></div></div><div class=\"bracket-round\"><h5>LEFT FINAL</h5><div class=\"match final-match\"><div class=\"match-teams\">Semi 1 Winner vs Semi 2 Winner</div><div class=\"match-info\">Qualifies to Grand Final</div></div></div></div><div class=\"bracket-side\"><h4>RIGHT BRACKET</h4><div class=\"bracket-round\"><h5>ROUND 1</h5><div class=\"match\"><div class=\"match-teams\">[MINI ESTUPIDS] vs [AAND KILLERS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[Cyber Knights] vs [Devil]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[THE MORPHS] vs [MAGUS]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match\"><div class=\"match-teams\">[हिंदी दस्ते] vs [PHANTOM WOLVES]</div><div class=\"match-info\">Best of 3 | Epic Soccer</div></div><div class=\"match bye-match\"><div class=\"match-teams\">(PING BLAMERS - BYE)</div><div class=\"match-info\">Automatic advancement</div></div></div><div class=\"bracket-round\"><h5>SEMIFINALS</h5><div class=\"match\"><div class=\"match-teams\">Winner 1 vs Winner 2</div><div class=\"match-info\">TBD</div></div><div class=\"match\"><div class=\"match-teams\">Winner 3 vs Winner 4</div><div class=\"match-info\">TBD</div></div></div><div class=\"bracket-round\"><h5>RIGHT FINAL</h5><div class=\"match final-match\"><div class=\"match-teams\">Semi 1 Winner vs Semi 2 Winner</div><div class=\"match-info\">Qualifies to Grand Final</div></div></div></div></div><div class=\"bracket-round\" style=\"text-align: center; margin-top: 40px;\"><h5>GRAND FINAL</h5><div class=\"match final-match\" style=\"max-width: 400px; margin: 0 auto;\"><div class=\"match-teams\">Left Final Winner vs Right Final Winner</div><div class=\"match-info\">CHAMPIONSHIP MATCH</div><div class=\"match-status\">TO BE DETERMINED</div></div></div></div>"
+    }
+  ],
+  "archived": [
+    {
+      "id": "alpha-bs-soccer-league-s1",
+      "title": "ALPHA BS SOCCER LEAGUE S1",
+      "quote": "\"Champions keep playing until they get it right.\" – Billie Jean King",
+      "date": "July 15 - July 16",
+      "format": "3v3 | Best of 3 | Epic Mode",
+      "game": "BombSquad Soccer",
+      "description": "Our inaugural season brought the community together for an unforgettable showdown.",
+      "winners": ["Plot Armour", "BRD Elite", "The Morphs"],
+      "tournamentDetailsHtml": "<div class=\"details-content\"><h4>Tournament Format</h4><ul><li>All matches were in epic mode</li><li>All matches were in trio mode (3v3)</li><li>Best of 3 soccer rounds</li><li>All matches were streamed live</li></ul><h4>Tournament Highlights</h4><p>Season 1 featured 16 teams and a packed finals weekend with record viewers.</p></div>",
+      "registeredTeams": [
+        {
+          "name": "Plot Armour",
+          "players": ["Alpha", "Babur", "Reen"]
+        },
+        {
+          "name": "BRD Elite",
+          "players": ["𝗥𝔞𝐣ɑ 𝔹ⱥ฿Մ", "ғʟᴀ֟፝ᴍᴇx࿐", "ℑ𝔱𝔖_𝔇𝔞𝔎𝔲"]
+        },
+        {
+          "name": "The Morphs",
+          "players": ["miltiaapp1", "L E V I 🦇", "мσяηιηg ѕтαя"]
+        }
+      ],
+      "tournamentBracketHtml": "<div class=\"bracket-content\"><div class=\"match final-match\"><div class=\"match-teams\">Plot Armour vs BRD Elite</div><div class=\"match-info\">Grand Final</div><div class=\"match-status\">Champion: Plot Armour</div></div></div>"
+    }
+  ]
+}
