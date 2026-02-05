@@ -121,6 +121,40 @@
             }
         });
         
+        const SERVERS_FILE = 'src/data/servers.json';
+
+        function buildServerCard(server) {
+            const statusClass = server.offline ? 'idle' : 'online';
+            return `
+                <div class="server-card">
+                    <div class="server-status ${statusClass}"></div>
+                    <div class="server-icon">
+                        <i class="${server.icon}"></i>
+                    </div>
+                    <h3>${server.name}</h3>
+                    <p>${server.description}</p>
+                    <div class="server-info">
+                        <span><i class="fas fa-user"></i>IP ${server.ip} PORT ${server.port}</span>
+                        <span><i class="fas fa-map"></i>${server.type}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function loadServers() {
+            const serversGrid = document.getElementById('serversGrid');
+            if (!serversGrid) return;
+
+            try {
+                const response = await fetch(SERVERS_FILE + '?t=' + Date.now());
+                if (!response.ok) return;
+                const data = await response.json();
+                serversGrid.innerHTML = (data.servers || []).map(buildServerCard).join('');
+            } catch (error) {
+                console.error('Failed to load servers data', error);
+            }
+        }
+
         // Auto-refresh stats every 60 seconds
         function autoRefresh() {
             setInterval(loadStats, 60000);
@@ -130,6 +164,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadStats();
             autoRefresh();
+            loadServers();
             
             // Update time every minute
             setInterval(() => {

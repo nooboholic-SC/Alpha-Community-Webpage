@@ -1,5 +1,5 @@
 {
-  "activeEnabled": false,
+  "activeEnabled": true,
   "active": [
     {
       "id": "alpha-bs-soccer-league-s2",
@@ -10,7 +10,7 @@
       "game": "BombSquad Soccer",
       "description": "Showcase your amazing soccer skills in Bombsquad and determine who is the best soccer team! The wait has been too long and finally it's here now!",
       "registrationLink": "https://discord.gg/alpha-community",
-      "registrationOpen": false,
+      "registrationOpen": true,
       "registrationStatusText": "Registrations are not closed",
       "details": {
         "format": [
@@ -165,182 +165,18 @@
   ],
   "archived": [
     {
-      "id": "alpha-bs-Soccer-league-s2",
-      "title": "ALPHA BS SOCCER LEAGUE S2",
-      "date": "JAN 31 2026 - FEB 31 2026",
-      "format": "3v3 | Best of 3 | Epic Mode | gloves",
-      "game": "BombSquad Soccer",
-      "description": "Power isn’t determined by ability. It’s determined by the will to use it.",
-      "winners": ["TEAM ADRENALINE - DONNY LEGEND PIXEL"],
-      "details": {
-        "format": [
-          "All matches were in epic mode",
-          "All matches were in trio mode (3v3)",
-          "Best of 3  rounds",
-          "All matches were with gloves"
-        ],
-        "rewards": {
-          "first": [
-            "Soccer goats display role",
-            " Bombsquad Partner Server Ownership for 45 days"
-          ],
-          "second": [
-            "Admin role in any one server of choice for 45 days",
-            "Custom effect & Tag in any one server of choice for 45 days"
-          ],
-          "third": [
-            "VIP role in any one server of choice for 45 days"
-          ]
-        },
-        "highlights": [
-          "Thanks for the wonderful show of skills."
-        ]
-      },
-      "bracket": [
-        {
-          "title": "Grand Final",
-          "matches": [
-            "TEAM ADRENALINE vs THE MORPHS"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "alpha-bs-league-s4",
-      "title": "ALPHA BS LEAGUE S4",
-      "date": "APRIL 19 2025 - APRIL 20 2025",
-      "format": "2v2 | Best of 7 | Epic Mode | gloves",
-      "game": "BombSquad Team Match",
-      "description": "Sometimes, we have to look beyond what we want and do what’s best.",
-      "winners": ["Zad Azo"],
-      "details": {
-        "format": [
-          "All matches were in epic mode",
-          "All matches were in duo mode (2v2)",
-          "Best of 7  rounds",
-          "All matches were with gloves"
-        ],
-        "rewards": {
-          "first": [
-            "Champion display role",
-            " Bombsquad Partner Server Ownership for 45 days"
-          ],
-          "second": [
-            "Admin role in any one server of choice for 45 days",
-            "Custom effect & Tag in any one server of choice for 45 days"
-          ],
-          "third": [
-            "VIP role in any one server of choice for 45 days"
-          ]
-        },
-        "highlights": [
-          "Thanks for the wonderful show of skills."
-        ]
-      },
-      "bracket": [
-        {
-          "title": "Grand Final",
-          "matches": [
-            "Zad Azo vs Ben Chicken"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "alpha-bs-Soccer-league-s1",
+      "id": "alpha-bs-soccer-league-s1",
       "title": "ALPHA BS SOCCER LEAGUE S1",
-      "date": "NOV 30 2024 - DEC 1 2024",
-      "format": "3v3 | Best of 3 | Epic Mode | gloves",
+      "date": "July 15 - July 16",
+      "format": "3v3 | Best of 3 | Epic Mode",
       "game": "BombSquad Soccer",
-      "description": "There’s no shame in falling down! True shame is to not stand up again!",
-      "winners": ["Team Apex Predators- DEFENDEROP 𝓥𝑜𝓲𝓭𝓟𝓾𝓵𝓼𝓮 ℘𝓲𝔁𝓮ℓ"],
+      "description": "Our inaugural season brought the community together for an unforgettable showdown.",
+      "winners": ["Plot Armour", "BRD Elite", "The Morphs"],
       "details": {
         "format": [
           "All matches were in epic mode",
           "All matches were in trio mode (3v3)",
-          "Best of 3  rounds",
-          "All matches were with gloves"
-        ],
-        "rewards": {
-          "first": [
-            "Soccer goats display role",
-            " Bombsquad Partner Server Ownership for 45 days"
-          ],
-          "second": [
-            "Admin role in any one server of choice for 45 days",
-            "Custom effect & Tag in any one server of choice for 45 days"
-          ],
-          "third": [
-            "VIP role in any one server of choice for 45 days"
-          ]
-        },
-        "highlights": [
-          "Thanks for the wonderful show of skills."
-        ]
-      },
-      "bracket": [
-        {
-          "title": "Grand Final",
-          "matches": [
-            "Team Apex Predators vs Team Espada"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "alpha-bs-league-s3",
-      "title": "ALPHA BS LEAGUE S3",
-      "date": "AUG 31 2024 - SEP 1 2024",
-      "format": "2v2 | Best of 7 | Epic Mode | gloves",
-      "game": "BombSquad Team Match",
-      "description": "Raw talent from servers all over will be fighting here to be the ultimate champion.",
-      "winners": ["Azo Ben"],
-      "details": {
-        "format": [
-          "All matches were in epic mode",
-          "All matches were in duo mode (2v2)",
-          "Best of 7  rounds",
-          "All matches were with gloves"
-        ],
-        "rewards": {
-          "first": [
-            "Champion display role",
-            " Bombsquad Partner Server Ownership for 45 days"
-          ],
-          "second": [
-            "Admin role in any one server of choice for 45 days",
-            "Custom effect & Tag in any one server of choice for 45 days"
-          ],
-          "third": [
-            "VIP role in any one server of choice for 45 days"
-          ]
-        },
-        "highlights": [
-          "Thanks for the wonderful show of skills."
-        ]
-      },
-      "bracket": [
-        {
-          "title": "Grand Final",
-          "matches": [
-            "Azo Ben vs Zad Nitin"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "alpha-bs-league-s2",
-      "title": "ALPHA BS LEAGUE S2",
-      "date": "May 4 2024 - May 5 2024",
-      "format": "2v2 | Best of 7 | Epic Mode",
-      "game": "BombSquad Team Match",
-      "description": "Raw talent from servers all over will be fighting here to be the ultimate champion.",
-      "winners": ["Yuno  BEN"],
-      "details": {
-        "format": [
-          "All matches were in epic mode",
-          "All matches were in duo mode (2v2)",
-          "Best of 3  rounds",
+          "Best of 3 soccer rounds",
           "All matches were streamed live"
         ],
         "rewards": {
@@ -357,59 +193,31 @@
           ]
         },
         "highlights": [
-          "Season 1 featured 26 teams and a packed finals weekend with record viewers."
+          "Season 1 featured 16 teams and a packed finals weekend with record viewers."
         ]
       },
-      "bracket": [
+      "registeredTeams": [
         {
-          "title": "Grand Final",
-          "matches": [
-            "Yuno  BEN vs Naruto Slashbyte"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "alpha-bs-league-s1",
-      "title": "ALPHA BS LEAGUE S1",
-      "date": "Feb 3 2024 - Feb 4 2024",
-      "format": "2v2 | Best of 7 | Epic Mode",
-      "game": "BombSquad Team Match",
-      "description": "Our inaugural season brought the community together for an unforgettable showdown.",
-      "winners": ["Ghostoo  Karan"],
-      "details": {
-        "format": [
-          "All matches were in epic mode",
-          "All matches were in duo mode (2v2)",
-          "Best of 3  rounds",
-          "All matches were streamed live"
-        ],
-        "rewards": {
-          "first": [
-            "Champion display role",
-            "Community spotlight in Discord"
-          ],
-          "second": [
-            "Runner-up role",
-            "Shoutout on socials"
-          ],
-          "third": [
-            "Bronze finisher role"
-          ]
+          "name": "Plot Armour",
+          "players": ["Alpha", "Babur", "Reen"]
         },
-        "highlights": [
-          "Season 1 featured 26 teams and a packed finals weekend with record viewers."
-        ]
-      },
+        {
+          "name": "BRD Elite",
+          "players": ["𝗥𝔞𝐣ɑ 𝔹ⱥ฿Մ", "ғʟᴀ֟፝ᴍᴇx࿐", "ℑ𝔱𝔖_𝔇𝔞𝔎𝔲"]
+        },
+        {
+          "name": "The Morphs",
+          "players": ["miltiaapp1", "L E V I 🦇", "мσяηιηg ѕтαя"]
+        }
+      ],
       "bracket": [
         {
           "title": "Grand Final",
           "matches": [
-            "Ghostoo Karan vs Professor Daemon"
+            "Plot Armour vs BRD Elite"
           ]
         }
       ]
     }
-
   ]
 }
