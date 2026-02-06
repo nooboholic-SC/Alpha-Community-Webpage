@@ -169,17 +169,17 @@
                             <span>${members.length} Members</span>
                         </div>
                         <p class="staff-role-description">${role.roleDescription}</p>
-                        <div class="staff-role-members">
-                            ${members.map(member => `
-                                <div class="staff-member">
-                                    <img src="${member.profileImage}" alt="${member.name}" />
-                                    <div>
-                                        <h4>${member.name}</h4>
-                                        <p>${member.description}</p>
-                                    </div>
+                    </div>
+                    <div class="staff-role-members">
+                        ${members.map(member => `
+                            <div class="staff-member-card" style="background-image: url('${member.profileImage}')">
+                                <div class="staff-member-overlay"></div>
+                                <div class="staff-member-content">
+                                    <h4>${member.name}</h4>
+                                    <p>${member.description}</p>
                                 </div>
-                            `).join('')}
-                        </div>
+                            </div>
+                        `).join('')}
                     </div>
                 </article>
             `;

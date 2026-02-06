@@ -569,6 +569,7 @@ h1, h2, h3, h4 {
     position: relative;
     padding: 24px;
     z-index: 1;
+    transition: opacity 0.3s ease;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -592,6 +593,10 @@ h1, h2, h3, h4 {
     box-shadow: var(--shadow-lg);
 }
 
+.staff-role-card:hover .staff-role-content {
+    opacity: 0;
+}
+
 .staff-role-header {
     display: flex;
     flex-direction: column;
@@ -612,42 +617,55 @@ h1, h2, h3, h4 {
 }
 
 .staff-role-members {
+    position: absolute;
+    inset: 0;
     display: grid;
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    padding: 18px;
     opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.98);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+    background: rgba(10, 14, 23, 0.6);
+    backdrop-filter: blur(6px);
 }
 
 .staff-role-card:hover .staff-role-members {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
 }
 
-.staff-member {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    background: rgba(10, 14, 23, 0.5);
+.staff-member-card {
+    position: relative;
     border-radius: var(--border-radius-sm);
-    padding: 12px 14px;
+    overflow: hidden;
+    min-height: 240px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
 }
 
-.staff-member img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+.staff-member-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(16, 24, 36, 0.2) 0%, rgba(10, 14, 23, 0.85) 100%);
 }
 
-.staff-member h4 {
+.staff-member-content {
+    position: relative;
+    padding: 16px;
+    z-index: 1;
+}
+
+.staff-member-content h4 {
     margin: 0 0 6px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--light);
 }
 
-.staff-member p {
+.staff-member-content p {
     margin: 0;
     font-size: 0.85rem;
     color: var(--gray);
