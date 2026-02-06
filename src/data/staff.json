@@ -1,17 +1,17 @@
 {
   "role": {
     "owner": {
-      "name": "AlphaLeader",
+      "name": "owner",
       "profileImage": "src/images/ALPHA.webp",
       "description": "Leads the entire community vision and final decisions for all major events and server operations."
     },
     "founder": {
-      "name": "Nooboholic",
+      "name": "founder",
       "profileImage": "src/images/bombsquad.webp",
       "description": "Built the community foundation, shaped culture, and mentors core leadership members."
     },
     "seniorStaff": {
-      "name": "Defender",
+      "name": "seniorStaff",
       "profileImage": "src/images/discord.webp",
       "description": "Handles escalations, tournament supervision, and advanced moderation workflows."
     },
