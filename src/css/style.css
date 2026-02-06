@@ -530,6 +530,7 @@ h1, h2, h3, h4 {
     border-radius: var(--border-radius);
     overflow: hidden;
     border: 1px solid rgba(139, 147, 176, 0.25);
+    position: relative;
 }
 
 .staff-role-card {
@@ -593,6 +594,9 @@ h1, h2, h3, h4 {
     transform: translateY(-6px) scale(1);
     box-shadow: var(--shadow-lg);
     pointer-events: auto;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
 }
 
 .staff-role-card:hover .staff-role-content {
