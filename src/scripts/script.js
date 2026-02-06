@@ -155,6 +155,49 @@
             }
         }
 
+        const STAFF_FILE = 'src/data/staff.json';
+
+        function formatRoleLabel(roleKey) {
+            const map = {
+                owner: 'Owner',
+                founder: 'Founder',
+                seniorStaff: 'Senior Staff',
+                complaintCrew: 'Complaint Crew'
+            };
+            return map[roleKey] || roleKey;
+        }
+
+        function buildStaffCard(roleKey, staff) {
+            return `
+                <article class="staff-showcase-card">
+                    <img src="${staff.profileImage}" alt="${staff.name}" class="staff-showcase-image" />
+                    <div class="staff-showcase-overlay"></div>
+                    <div class="staff-showcase-content">
+                        <p class="staff-showcase-role">${formatRoleLabel(roleKey)}</p>
+                        <h3>${staff.name}</h3>
+                        <p>${staff.description}</p>
+                    </div>
+                </article>
+            `;
+        }
+
+        async function loadStaff() {
+            const staffGrid = document.getElementById('staffGrid');
+            if (!staffGrid) return;
+
+            try {
+                const response = await fetch(STAFF_FILE + '?t=' + Date.now());
+                if (!response.ok) return;
+                const data = await response.json();
+                const roles = data.role || {};
+                staffGrid.innerHTML = Object.entries(roles)
+                    .map(([roleKey, staff]) => buildStaffCard(roleKey, staff))
+                    .join('');
+            } catch (error) {
+                console.error('Failed to load staff data', error);
+            }
+        }
+
         // Auto-refresh stats every 60 seconds
         function autoRefresh() {
             setInterval(loadStats, 60000);
@@ -165,6 +208,7 @@
             loadStats();
             autoRefresh();
             loadServers();
+            loadStaff();
             
             // Update time every minute
             setInterval(() => {

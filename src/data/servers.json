@@ -24,7 +24,7 @@
       "port": "43210",
       "description": "1 vs 1 Intense Fights",
       "type": "Epic-Gloves",
-      "offline": false,
+      "offline": true,
       "icon": "fas fa-skull-crossbones"
     },
     {
