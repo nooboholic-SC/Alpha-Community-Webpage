@@ -522,6 +522,196 @@ h1, h2, h3, h4 {
     color: var(--gray);
 }
 
+
+.staff-role-grid {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid rgba(139, 147, 176, 0.25);
+    position: relative;
+}
+
+.staff-role-card {
+    flex: 1 1 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: flex 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    background: #1a2335;
+    will-change: flex, transform, opacity;
+}
+
+.staff-role-card:last-child {
+    border-right: none;
+}
+
+.staff-role-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) brightness(0.85);
+}
+
+.staff-role-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20, 30, 48, 0.2) 0%, rgba(10, 14, 23, 0.75) 65%, rgba(10, 14, 23, 0.92) 100%);
+}
+
+.staff-role-content {
+    position: relative;
+    padding: 24px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.staff-role-description {
+    color: #d8e6f3;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.staff-role-grid:hover .staff-role-card {
+    opacity: 0;
+    transform: scale(0.98);
+    pointer-events: none;
+}
+
+.staff-role-grid:hover .staff-role-card:hover {
+    flex: 3 1 0;
+    opacity: 1;
+    transform: translateY(-6px) scale(1);
+    box-shadow: var(--shadow-lg);
+    pointer-events: auto;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+}
+
+.staff-role-card:hover .staff-role-content {
+    opacity: 0;
+}
+
+.staff-role-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.staff-role-header h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--light);
+}
+
+.staff-role-header span {
+    font-size: 0.85rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.staff-role-members {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding: 18px;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+    background: rgba(10, 14, 23, 0.6);
+    backdrop-filter: blur(6px);
+    align-items: stretch;
+}
+
+.staff-role-card:hover .staff-role-members {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.staff-member-card {
+    position: relative;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.staff-member-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(16, 24, 36, 0.2) 0%, rgba(10, 14, 23, 0.85) 100%);
+}
+
+.staff-member-content {
+    position: relative;
+    padding: 16px;
+    z-index: 1;
+}
+
+.staff-member-content h4 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: var(--light);
+}
+
+.staff-member-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+@media (max-width: 1100px) {
+    .staff-role-grid {
+        flex-direction: column;
+    }
+
+    .staff-role-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .staff-role-card:last-child {
+        border-bottom: none;
+    }
+
+    .staff-role-grid:hover .staff-role-card {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .staff-role-grid:hover .staff-role-card:hover {
+        flex: 1 1 auto;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .staff-role-card {
+        min-height: auto;
+    }
+}
+
 /* Widget Section */
 .widget-wrapper {
     display: grid;
@@ -1272,9 +1462,148 @@ h1, h2, h3, h4 {
     color: white;
 }
 
+.register-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    text-decoration: none;
+}
+
 .tournament-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
+}
+
+.archived-tournaments {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.archived-toggle {
+    align-self: flex-start;
+    background: rgba(139, 147, 176, 0.2);
+    color: var(--light);
+    border: 1px solid rgba(139, 147, 176, 0.4);
+}
+
+.archived-list {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.archived-list.is-open {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.archived-card {
+    text-align: left;
+    background: rgba(18, 24, 38, 0.95);
+    border: 1px solid rgba(139, 147, 176, 0.3);
+    border-radius: var(--border-radius-sm);
+    padding: 20px;
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.archived-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: rgba(255, 107, 107, 0.4);
+}
+
+.archived-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.archived-card-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.archived-date {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.archived-card-body p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.archived-card-action {
+    margin-top: auto;
+    color: var(--accent);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 1200px) {
+    .archived-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .archived-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tournament-empty {
+    background: rgba(18, 24, 38, 0.95);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    border: 2px dashed rgba(139, 147, 176, 0.4);
+    color: var(--light);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.tournament-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--light);
+    background: rgba(139, 147, 176, 0.2);
+    border: 1px solid rgba(139, 147, 176, 0.3);
+    padding: 10px 16px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+}
+
+.tournament-winners {
+    margin: 20px 0 30px;
+    padding: 20px;
+    background: rgba(10, 14, 23, 0.5);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(139, 147, 176, 0.2);
+}
+
+.tournament-winners h4 {
+    color: var(--light);
+    margin-bottom: 10px;
+}
+
+.tournament-winners ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--gray);
 }
 
 /* ===== POPUP STYLES ===== */
