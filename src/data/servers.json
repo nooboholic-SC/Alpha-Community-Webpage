@@ -1,0 +1,58 @@
+{
+  "servers": [
+    {
+      "name": "Alpha Epic Teams",
+      "ip": "34.47.155.240",
+      "port": "42343",
+      "description": "Main competitive server ranked matches.",
+      "type": "Epic Teams Playlist Gloves - Epic",
+      "offline": false,
+      "icon": "fas fa-crown"
+    },
+    {
+      "name": "Alpha Epic Soccer",
+      "ip": "152.67.11.35",
+      "port": "43210",
+      "description": "Home for BS soccer players",
+      "type": "Epic Soccer & Hockey Gloves-Epic-Icy Floor",
+      "offline": false,
+      "icon": "fa fa-soccer-ball"
+    },
+    {
+      "name": "Alpha Epic Duels",
+      "ip": "13.127.82.216",
+      "port": "43210",
+      "description": "1 vs 1 Intense Fights",
+      "type": "Epic-Gloves",
+      "offline": true,
+      "icon": "fas fa-skull-crossbones"
+    },
+    {
+      "name": "Alpha vs Defender Pro Soccer",
+      "ip": "13.204.68.220",
+      "port": "43243",
+      "description": "Intense soccer matches for Pros",
+      "type": "Soccer-epic-gloves-Pros",
+      "offline": false,
+      "icon": "fa fa-soccer-ball"
+    },
+    {
+      "name": "Alpha vs PDF FFA",
+      "ip": "13.232.55.163",
+      "port": "43210",
+      "description": "FFA Server For Solo vs All lovers",
+      "type": "FFA-epic-gloves",
+      "offline": false,
+      "icon": "fas fa-mandalorian"
+    },
+    {
+      "name": "Alpha vs Nooboholic Fantasy Soccer",
+      "ip": "129.151.46.134",
+      "port": "43243",
+      "description": "Experimental soccer server with custom mods",
+      "type": "Soccer-epic-gloves-MODS",
+      "offline": false,
+      "icon": "fa fa-soccer-ball"
+    }
+  ]
+}
