@@ -161,20 +161,25 @@
             const members = role.members || [];
             return `
                 <article class="staff-role-card">
-                    <div class="staff-role-header">
-                        <h3>${role.role}</h3>
-                        <span>${members.length} Members</span>
-                    </div>
-                    <div class="staff-role-members">
-                        ${members.map(member => `
-                            <div class="staff-member">
-                                <img src="${member.profileImage}" alt="${member.name}" />
-                                <div>
-                                    <h4>${member.name}</h4>
-                                    <p>${member.description}</p>
+                    <img src="${role.roleImage}" alt="${role.role}" class="staff-role-image" />
+                    <div class="staff-role-overlay"></div>
+                    <div class="staff-role-content">
+                        <div class="staff-role-header">
+                            <h3>${role.role}</h3>
+                            <span>${members.length} Members</span>
+                        </div>
+                        <p class="staff-role-description">${role.roleDescription}</p>
+                        <div class="staff-role-members">
+                            ${members.map(member => `
+                                <div class="staff-member">
+                                    <img src="${member.profileImage}" alt="${member.name}" />
+                                    <div>
+                                        <h4>${member.name}</h4>
+                                        <p>${member.description}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        `).join('')}
+                            `).join('')}
+                        </div>
                     </div>
                 </article>
             `;
