@@ -643,7 +643,7 @@ h1, h2, h3, h4 {
     position: relative;
     border-radius: var(--border-radius-sm);
     overflow: hidden;
-    min-height: 220px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     display: flex;
