@@ -6,46 +6,75 @@
       "roleDescription": "Leads the entire community vision and final decisions for all major events and server operations.",
       "members": [
         {
-          "name": "AlphaLeader",
+          "name": "ALPHA",
           "profileImage": "src/images/ALPHA.webp",
           "description": "Leads the entire community vision and final decisions for all major events and server operations."
         },
         {
-          "name": "Raven",
+          "name": "BABUR",
+          "profileImage": "src/images/Valorant.webp",
+          "description": "Oversees strategic partnerships and seasonal planning for the community."
+        },
+        {
+          "name": "REEN",
+          "profileImage": "src/images/Valorant.webp",
+          "description": "Oversees strategic partnerships and seasonal planning for the community."
+        },
+        {
+          "name": "ABIN",
           "profileImage": "src/images/Valorant.webp",
           "description": "Oversees strategic partnerships and seasonal planning for the community."
         }
+        
       ]
     },
     {
-      "role": "Founder",
+      "role": "Senior Staff",
       "roleImage": "src/images/bombsquad.webp",
       "roleDescription": "Built the community foundation, shaped culture, and mentors core leadership members.",
       "members": [
         {
-          "name": "Nooboholic",
+          "name": "PIYUSH",
           "profileImage": "src/images/bombsquad.webp",
           "description": "Built the community foundation, shaped culture, and mentors core leadership members."
         },
         {
-          "name": "Vortex",
+          "name": "NOOBOHOLIC",
+          "profileImage": "src/images/discord.webp",
+          "description": "Guides long-term vision, legacy programs, and special community initiatives."
+        }
+        ,
+        {
+          "name": "DEFENDEROP",
+          "profileImage": "src/images/discord.webp",
+          "description": "Guides long-term vision, legacy programs, and special community initiatives."
+        }
+        ,
+        {
+          "name": "KARMVEER",
           "profileImage": "src/images/discord.webp",
           "description": "Guides long-term vision, legacy programs, and special community initiatives."
         }
       ]
     },
     {
-      "role": "Senior Staff",
+      "role": "Complaint crew",
       "roleImage": "src/images/discord.webp",
       "roleDescription": "Handles escalations, tournament supervision, and advanced moderation workflows.",
       "members": [
         {
-          "name": "Defender",
+          "name": "POM POM",
           "profileImage": "src/images/discord.webp",
           "description": "Handles escalations, tournament supervision, and advanced moderation workflows."
         },
         {
-          "name": "TourneyPro",
+          "name": "JIKO",
+          "profileImage": "src/images/GTAV.webp",
+          "description": "Leads competitive events, bracket oversight, and staff training sessions."
+        }
+        ,
+        {
+          "name": "SANCHIT",
           "profileImage": "src/images/GTAV.webp",
           "description": "Leads competitive events, bracket oversight, and staff training sessions."
         }
