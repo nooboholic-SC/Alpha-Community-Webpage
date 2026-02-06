@@ -2,6 +2,8 @@
   "roles": [
     {
       "role": "Owner",
+      "roleImage": "src/images/ALPHA.webp",
+      "roleDescription": "Leads the entire community vision and final decisions for all major events and server operations.",
       "members": [
         {
           "name": "AlphaLeader",
@@ -17,6 +19,8 @@
     },
     {
       "role": "Founder",
+      "roleImage": "src/images/bombsquad.webp",
+      "roleDescription": "Built the community foundation, shaped culture, and mentors core leadership members.",
       "members": [
         {
           "name": "Nooboholic",
@@ -32,6 +36,8 @@
     },
     {
       "role": "Senior Staff",
+      "roleImage": "src/images/discord.webp",
+      "roleDescription": "Handles escalations, tournament supervision, and advanced moderation workflows.",
       "members": [
         {
           "name": "Defender",
@@ -47,6 +53,8 @@
     },
     {
       "role": "Complaint Crew",
+      "roleImage": "src/images/GTAV.webp",
+      "roleDescription": "Reviews complaints, resolves disputes fairly, and ensures a respectful space for everyone.",
       "members": [
         {
           "name": "Support Wing",
