@@ -157,25 +157,24 @@
 
         const STAFF_FILE = 'src/data/staff.json';
 
-        function formatRoleLabel(roleKey) {
-            const map = {
-                owner: 'Owner',
-                founder: 'Founder',
-                seniorStaff: 'Senior Staff',
-                complaintCrew: 'Complaint Crew'
-            };
-            return map[roleKey] || roleKey;
-        }
-
-        function buildStaffCard(roleKey, staff) {
+        function buildStaffRoleCard(role) {
+            const members = role.members || [];
             return `
-                <article class="staff-showcase-card">
-                    <img src="${staff.profileImage}" alt="${staff.name}" class="staff-showcase-image" />
-                    <div class="staff-showcase-overlay"></div>
-                    <div class="staff-showcase-content">
-                        <p class="staff-showcase-role">${formatRoleLabel(roleKey)}</p>
-                        <h3>${staff.name}</h3>
-                        <p>${staff.description}</p>
+                <article class="staff-role-card">
+                    <div class="staff-role-header">
+                        <h3>${role.role}</h3>
+                        <span>${members.length} Members</span>
+                    </div>
+                    <div class="staff-role-members">
+                        ${members.map(member => `
+                            <div class="staff-member">
+                                <img src="${member.profileImage}" alt="${member.name}" />
+                                <div>
+                                    <h4>${member.name}</h4>
+                                    <p>${member.description}</p>
+                                </div>
+                            </div>
+                        `).join('')}
                     </div>
                 </article>
             `;
@@ -189,9 +188,8 @@
                 const response = await fetch(STAFF_FILE + '?t=' + Date.now());
                 if (!response.ok) return;
                 const data = await response.json();
-                const roles = data.role || {};
-                staffGrid.innerHTML = Object.entries(roles)
-                    .map(([roleKey, staff]) => buildStaffCard(roleKey, staff))
+                staffGrid.innerHTML = (data.roles || [])
+                    .map(role => buildStaffRoleCard(role))
                     .join('');
             } catch (error) {
                 console.error('Failed to load staff data', error);
