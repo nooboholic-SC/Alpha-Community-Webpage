@@ -306,83 +306,7 @@
                 <p class="section-subtitle">Multiple servers for endless fun</p>
             </div>
             
-            <div class="servers-grid">
-                <div class="server-card">
-                    <div class="server-status online"></div>
-                    <div class="server-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Alpha Epic Teams</h3>
-                    <p>Main competitive server ranked matches.</p>
-                    <div class="server-info">
-                        <span><i class="fas fa-user"></i>IP 34.47.155.240 PORT 42343</span>
-                        <span><i class="fas fa-map"></i>Epic Teams Playlist Gloves - Epic</span>
-                    </div>
-                </div>
-            
-                
-                <div class="server-card">
-                    <div class="server-status online"></div>
-                    <div class="server-icon">
-                        <i class="fa fa-soccer-ball"></i>
-                    </div>
-                    <h3>Alpha Epic Soccer</h3>
-                    <p>Home for BS soccer players</p>
-                    <div class="server-info">
-                        <span><i class="fas fa-user"></i>IP 152.67.11.35 PORT 43210</span>
-                        <span><i class="fas fa-map"></i>Epic Soccer & Hockey Gloves-Epic-Icy Floor</span>
-                    </div>
-                </div>
-                
-                <div class="server-card">
-                    <div class="server-status idle"></div>
-                    <div class="server-icon">
-                        <i class="fas fa-skull-crossbones"></i>
-                    </div>
-                    <h3>Alpha Epic Duels</h3>
-                    <p>1 vs 1 Intense Fights</p>
-                    <div class="server-info">
-                        <span><i class="fas fa-user"></i>IP 13.127.82.216 PORT 43210</span>
-                        <span><i class="fas fa-map"></i>Epic-Gloves</span>
-                    </div>
-                </div>
-                <div class="server-card">
-                    <div class="server-status online"></div>
-                    <div class="server-icon">
-                        <i class="fa fa-soccer-ball"></i>
-                    </div>
-                    <h3>Alpha vs Defender Pro Soccer</h3>
-                    <p>Intense soccer matches for Pros</p>
-                    <div class="server-info">
-                        <span><i class="fas fa-user"></i>IP 13.204.68.220 PORT 43243</span>
-                        <span><i class="fas fa-map"></i>Soccer-epic-gloves-Pros</span>
-                    </div>
-                </div>
-                <div class="server-card">
-                    <div class="server-status online"></div>
-                    <div class="server-icon">
-                        <i class="fas fa-mandalorian"></i>
-                    </div>
-                    <h3>Alpha vs PDF FFA</h3>
-                    <p>FFA Server For Solo vs All lovers</p>
-                    <div class="server-info">
-                        <span><i class="fas fa-user"></i>IP 13.232.55.163 PORT 43210</span>
-                        <span><i class="fas fa-map"></i>FFA-epic-gloves</span>
-                    </div>
-                </div>
-                <div class="server-card">
-                    <div class="server-status online"></div>
-                    <div class="server-icon">
-                        <i class="fa fa-soccer-ball"></i>
-                    </div>
-                    <h3>Alpha vs Nooboholic Fantasy Soccer</h3>
-                    <p>Experimental soccer server with custom mods</p>
-                    <div class="server-info">
-                        <span><i class="fas fa-user"></i>IP 129.151.46.134 PORT 43243</span>
-                        <span><i class="fas fa-map"></i>Soccer-epic-gloves-MODS</span>
-                    </div>
-                </div>
-            </div>
+            <div class="servers-grid" id="serversGrid"></div>
         </div>
     </section>
 
@@ -398,58 +322,12 @@
             <p class="section-subtitle">Competitive gaming events</p>
         </div>
         
-        <div class="tournament-card">
-            <div class="tournament-badge">
-                <i class="fas fa-fire"></i> ACTIVE TOURNAMENT
-            </div>
-            
-            <div class="tournament-header">
-                <h3>ALPHA BS SOCCER LEAGUE S2</h3>
-                <p class="tournament-quote">"Power isn't determined by ability. It's determined by the will to use it." – Madara Uchiha</p>
-            </div>
-            
-            <div class="tournament-details">
-                <div class="detail-row">
-                    <div class="detail-item">
-                        <i class="far fa-calendar"></i>
-                        <div>
-                            <strong>Date</strong>
-                            <p>January 31 - February 1</p>
-                        </div>
-                    </div>
-                    <div class="detail-item">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <strong>Format</strong>
-                            <p>3v3 | Best of 3 | Epic Mode</p>
-                        </div>
-                    </div>
-                    <div class="detail-item">
-                        <i class="fas fa-gamepad"></i>
-                        <div>
-                            <strong>Game</strong>
-                            <p>BombSquad Soccer</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <p class="tournament-description">
-                    Showcase your amazing soccer skills in Bombsquad and determine who is the best soccer team! 
-                    The wait has been too long and finally it's here now!
-                </p>
-                
-                <div class="tournament-actions">
-                    <button class="tournament-btn details-btn" onclick="showPopup('details')">
-                        <i class="fas fa-info-circle"></i> Tournament Details
-                    </button>
-                    <button class="tournament-btn teams-btn" onclick="showPopup('teams')">
-                        <i class="fas fa-users"></i> View Teams
-                    </button>
-                    <button class="tournament-btn bracket-btn" onclick="showPopup('bracket')">
-                        <i class="fas fa-sitemap"></i> View Bracket
-                    </button>
-                </div>
-            </div>
+        <div id="activeTournament"></div>
+        <div class="archived-tournaments">
+            <button class="tournament-btn archived-toggle" id="archivedToggle" aria-expanded="false">
+                <i class="fas fa-archive"></i> Archived Tournaments
+            </button>
+            <div class="archived-list" id="archivedList"></div>
         </div>
     </div>
 </section>
@@ -469,87 +347,19 @@
     </div>
 </div>
 
-    <!-- Staff Section
+    <!-- Staff Section -->
     <section class="section staff-section" id="staff">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
                     <span class="section-icon"><i class="fas fa-user-shield"></i></span>
-                    MEET OUR STAFF TEAM
+                    LEADERSHIP & STAFF
                 </h2>
-                <p class="section-subtitle">Dedicated team keeping the community awesome</p>
+                <p class="section-subtitle">Owner, Founder, Senior Staff & Complaint Crew</p>
             </div>
-            
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <div class="staff-avatar admin">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>AlphaLeader</h3>
-                    <p class="staff-role">Server Owner</p>
-                    <p class="staff-desc">Community founder and head tournament organizer.</p>
-                    <div class="staff-social">
-                        <span><i class="fas fa-star"></i> Level 100</span>
-                        <span><i class="fas fa-clock"></i> 2+ years</span>
-                    </div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="staff-avatar admin">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>ModMaster</h3>
-                    <p class="staff-role">Head Admin</p>
-                    <p class="staff-desc">Manages server operations and admin team.</p>
-                    <div class="staff-social">
-                        <span><i class="fas fa-star"></i> Level 85</span>
-                        <span><i class="fas fa-clock"></i> 1.5 years</span>
-                    </div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="staff-avatar mod">
-                        <i class="fas fa-hammer"></i>
-                    </div>
-                    <h3>GameGuard</h3>
-                    <p class="staff-role">Senior Moderator</p>
-                    <p class="staff-desc">Ensures fair play and resolves disputes.</p>
-                    <div class="staff-social">
-                        <span><i class="fas fa-star"></i> Level 72</span>
-                        <span><i class="fas fa-clock"></i> 1 year</span>
-                    </div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="staff-avatar mod">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>TourneyPro</h3>
-                    <p class="staff-role">Tournament Manager</p>
-                    <p class="staff-desc">Organizes and runs competitive events.</p>
-                    <div class="staff-social">
-                        <span><i class="fas fa-star"></i> Level 68</span>
-                        <span><i class="fas fa-clock"></i> 10 months</span>
-                    </div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="staff-avatar helper">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3>NewbieGuide</h3>
-                    <p class="staff-role">Community Helper</p>
-                    <p class="staff-desc">Welcomes new members and helps beginners.</p>
-                    <div class="staff-social">
-                        <span><i class="fas fa-star"></i> Level 55</span>
-                        <span><i class="fas fa-clock"></i> 6 months</span>
-                    </div>
-                </div>
-                
-                
-            </div>
+            <div class="staff-showcase-grid" id="staffGrid"></div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Discord Widget -->
     <section class="section widget-section">
