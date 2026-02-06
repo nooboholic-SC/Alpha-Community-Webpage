@@ -644,12 +644,12 @@ h1, h2, h3, h4 {
     border-radius: var(--border-radius-sm);
     overflow: hidden;
     height: 100%;
-    width: 100%;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
-    flex: 0 0 100%;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .staff-member-overlay {
